@@ -912,6 +912,22 @@ const intelligenceEngine: IntelligenceLayer = {
 
 ---
 
+## 🙏 Acknowledgments and Sources
+
+This configuration builds upon excellent open-source work:
+
+- **[Agent OS](https://github.com/buildermethods/agent-os)** - Orchestration patterns and multi-agent coordination
+- **[Awesome Claude Code Agents](https://github.com/hesreallyhim/awesome-claude-code-agents)** - Agent collection and specializations
+- **[Agents Repository](https://github.com/wshobson/agents)** - Agent definitions and patterns
+- **[Anthropic Claude Code](https://docs.anthropic.com/claude-code)** - Platform and best practices
+- **[Context7](https://context7.com)** - MCP integration for real-time documentation
+
+Our innovations: intelligent orchestration, sync system, Context7 integration, workflow automation.
+
+See [CREDITS.md](~/Sites/claude-code-config/CREDITS.md) for full attributions.
+
+---
+
 **Version**: 3.0 🤖  
 **Last Update**: 2025-08-12  
 **Features**: Sonnet 4, Multi-Modal AI, Advanced Orchestration, Predictive Intelligence  
