@@ -1,0 +1,239 @@
+{
+  "templates": {
+    "laravel_crud_api": {
+      "id": "laravel_crud_api",
+      "name": "Laravel CRUD API Complete",
+      "description": "Complete CRUD API implementation with Laravel best practices",
+      "version": "1.0",
+      "triggers": [
+        {
+          "type": "keyword",
+          "condition": "(crud|create.*read.*update.*delete).*api.*(laravel|php)",
+          "weight": 1.0,
+          "confidence_threshold": 0.8
+        },
+        {
+          "type": "pattern", 
+          "condition": "resource.*controller|api.*resource|restful.*api",
+          "weight": 0.9,
+          "confidence_threshold": 0.7
+        }
+      ],
+      "complexity_score": 5,
+      "required_agents": ["laravel-specialist"],
+      "optional_agents": ["database-specialist", "api-designer", "test-automator"],
+      "estimated_duration": 1800,
+      "workflow_steps": [
+        {
+          "id": "model_setup",
+          "name": "Create Model & Migration",
+          "agent": "laravel-specialist",
+          "dependencies": [],
+          "estimated_duration": 300,
+          "deliverables": ["model_file", "migration_file", "factory_file"],
+          "success_criteria": ["Model relationships defined", "Migration optimized", "Fillable fields set"]
+        },
+        {
+          "id": "api_controller",
+          "name": "Implement API Controller",
+          "agent": "laravel-specialist", 
+          "dependencies": ["model_setup"],
+          "estimated_duration": 600,
+          "deliverables": ["controller_file", "form_requests"],
+          "success_criteria": ["All CRUD endpoints", "Proper validation", "Error handling"]
+        },
+        {
+          "id": "api_resources",
+          "name": "Create API Resources",
+          "agent": "api-designer",
+          "dependencies": ["api_controller"],
+          "estimated_duration": 300,
+          "deliverables": ["resource_files", "collection_resources"],
+          "success_criteria": ["Consistent response format", "Data transformation"]
+        },
+        {
+          "id": "route_definition",
+          "name": "Define API Routes",
+          "agent": "laravel-specialist",
+          "dependencies": ["api_controller"],
+          "estimated_duration": 180,
+          "deliverables": ["api_routes"],
+          "success_criteria": ["RESTful routes", "Proper middleware", "Rate limiting"]
+        },
+        {
+          "id": "testing_suite",
+          "name": "Implement Tests",
+          "agent": "test-automator",
+          "dependencies": ["api_resources", "route_definition"],
+          "estimated_duration": 720,
+          "deliverables": ["feature_tests", "unit_tests"],
+          "success_criteria": ["All endpoints tested", "> 85% coverage", "Edge cases covered"]
+        }
+      ],
+      "success_metrics": [
+        {"name": "test_coverage", "target": 0.85, "tolerance": 0.1},
+        {"name": "response_time", "target": 200, "tolerance": 0.3},
+        {"name": "code_quality", "target": 0.9, "tolerance": 0.1}
+      ],
+      "customization_points": [
+        {
+          "parameter": "authentication",
+          "options": ["none", "sanctum", "passport", "jwt"],
+          "default": "sanctum",
+          "affects_steps": ["api_controller", "route_definition"]
+        },
+        {
+          "parameter": "validation_strategy", 
+          "options": ["form_requests", "manual", "rules_array"],
+          "default": "form_requests",
+          "affects_steps": ["api_controller"]
+        },
+        {
+          "parameter": "caching_strategy",
+          "options": ["none", "redis", "database", "tags"],
+          "default": "redis",
+          "affects_steps": ["api_controller"]
+        }
+      ],
+      "learning_data": {
+        "usage_count": 0,
+        "success_rate": 0.0,
+        "average_satisfaction": 0.0,
+        "total_time_saved": 0,
+        "common_customizations": {},
+        "performance_metrics": {}
+      }
+    },
+    
+    "docker_laravel_setup": {
+      "id": "docker_laravel_setup",
+      "name": "Docker Laravel Development Environment",
+      "description": "Complete Docker setup for Laravel development with optimization",
+      "version": "1.0",
+      "triggers": [
+        {
+          "type": "keyword",
+          "condition": "docker.*laravel|laravel.*docker|containerize.*laravel",
+          "weight": 1.0,
+          "confidence_threshold": 0.8
+        }
+      ],
+      "complexity_score": 6,
+      "required_agents": ["docker-specialist", "laravel-specialist"],
+      "optional_agents": ["devops-engineer", "database-specialist"],
+      "estimated_duration": 2400,
+      "workflow_steps": [
+        {
+          "id": "dockerfile_creation",
+          "name": "Create Optimized Dockerfile",
+          "agent": "docker-specialist",
+          "dependencies": [],
+          "estimated_duration": 600,
+          "deliverables": ["dockerfile", "dockerignore"],
+          "success_criteria": ["Multi-stage build", "Security hardened", "Size optimized"]
+        },
+        {
+          "id": "docker_compose_setup",
+          "name": "Configure Docker Compose",
+          "agent": "docker-specialist", 
+          "dependencies": ["dockerfile_creation"],
+          "estimated_duration": 900,
+          "deliverables": ["docker-compose.yml", "env_files"],
+          "success_criteria": ["All services defined", "Networks configured", "Volumes optimized"]
+        },
+        {
+          "id": "laravel_optimization",
+          "name": "Laravel Container Optimization",
+          "agent": "laravel-specialist",
+          "dependencies": ["docker_compose_setup"],
+          "estimated_duration": 600,
+          "deliverables": ["optimized_config", "startup_scripts"],
+          "success_criteria": ["Fast startup", "Proper permissions", "Cache configured"]
+        },
+        {
+          "id": "development_workflow",
+          "name": "Setup Development Workflow",
+          "agent": "devops-engineer",
+          "dependencies": ["laravel_optimization"],
+          "estimated_duration": 300,
+          "deliverables": ["scripts", "documentation"],
+          "success_criteria": ["Hot reload works", "Debugging enabled", "Easy commands"]
+        }
+      ]
+    },
+
+    "wordpress_custom_theme": {
+      "id": "wordpress_custom_theme",
+      "name": "WordPress Custom Theme Development", 
+      "description": "Complete custom WordPress theme with modern practices",
+      "version": "1.0",
+      "triggers": [
+        {
+          "type": "keyword",
+          "condition": "wordpress.*theme|custom.*theme.*wordpress|theme.*development",
+          "weight": 1.0,
+          "confidence_threshold": 0.8
+        }
+      ],
+      "complexity_score": 7,
+      "required_agents": ["wordpress-expert"],
+      "optional_agents": ["ui-engineer", "frontend-developer", "performance-engineer"],
+      "estimated_duration": 3600,
+      "workflow_steps": [
+        {
+          "id": "theme_structure",
+          "name": "Setup Theme Structure",
+          "agent": "wordpress-expert",
+          "dependencies": [],
+          "estimated_duration": 480,
+          "deliverables": ["theme_files", "functions_php", "style_css"],
+          "success_criteria": ["Proper file hierarchy", "WordPress standards", "Basic functionality"]
+        },
+        {
+          "id": "custom_post_types",
+          "name": "Implement Custom Post Types",
+          "agent": "wordpress-expert",
+          "dependencies": ["theme_structure"],
+          "estimated_duration": 720,
+          "deliverables": ["cpt_definitions", "custom_fields", "templates"],
+          "success_criteria": ["All CPTs functional", "Custom fields working", "Admin interface clean"]
+        },
+        {
+          "id": "frontend_development",
+          "name": "Frontend Implementation", 
+          "agent": "ui-engineer",
+          "dependencies": ["theme_structure"],
+          "estimated_duration": 1800,
+          "deliverables": ["template_files", "css_files", "js_files"],
+          "success_criteria": ["Responsive design", "Cross-browser compatible", "Accessibility compliant"]
+        },
+        {
+          "id": "performance_optimization",
+          "name": "Performance Optimization",
+          "agent": "performance-engineer",
+          "dependencies": ["frontend_development", "custom_post_types"],
+          "estimated_duration": 600,
+          "deliverables": ["optimized_assets", "caching_setup"],
+          "success_criteria": ["Core Web Vitals optimized", "Assets minified", "Caching implemented"]
+        }
+      ]
+    }
+  },
+  
+  "auto_generated_templates": {
+    "_metadata": {
+      "last_generation": "2025-08-12T16:45:00Z",
+      "next_generation": "2025-08-19T16:45:00Z",
+      "generation_frequency": "weekly"
+    }
+  },
+  
+  "template_usage_stats": {
+    "most_used": [],
+    "highest_satisfaction": [],
+    "fastest_completion": [],
+    "most_customized": []
+  },
+  
+  "schema_version": "1.0"
+}

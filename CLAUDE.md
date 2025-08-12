@@ -1,5 +1,40 @@
 # Claude Code - Global Configuration for Full Stack Development
 
+## 🔄 Configuration Sync Strategy
+
+### Repository Location
+- **Development Repository**: `~/Sites/claude-code-config`
+- **Active Configuration**: `~/.claude/`
+- **Sync Script**: `~/.claude/sync-config.sh`
+
+### Sync Commands
+```bash
+# Sync from Claude to Repository (for backup/commit)
+~/.claude/sync-config.sh to-repo
+
+# Sync from Repository to Claude (after pull/clone)
+~/.claude/sync-config.sh from-repo
+
+# Check sync status
+~/.claude/sync-config.sh status
+
+# Watch for changes and auto-sync
+~/.claude/sync-config.sh watch
+```
+
+### Auto-Sync Workflow
+1. **Local Changes**: Edit `~/.claude/CLAUDE.md` normally
+2. **Auto-Sync**: Run `sync-config.sh watch` in background
+3. **Git Commit**: Changes auto-committed with timestamp
+4. **Manual Push**: Push to GitHub when ready
+
+### Files Synced
+- `CLAUDE.md` - Main configuration
+- `settings.json` - Claude Code settings
+- `agents/` - Agent specifications
+- `templates/` - Code templates
+- `workflows/` - Workflow definitions
+
 ## Primary Technical Information Source
 **Context7**: Integrated MCP service for real-time technical information
 - **Endpoint**: https://mcp.context7.com/mcp  
@@ -259,6 +294,57 @@ function selectOptimalModel(task: TaskComplexity): ModelRecommendation {
     confidence: 0.75
   };
 }
+```
+
+#### Context-Specific Model Selection
+
+**PHP/Laravel Development**:
+- Simple tasks (CRUD, validations): `Haiku`
+- Complex APIs, authentication: `Sonnet`
+- Microservices architecture: `Opus`
+
+**Full Stack Features**:
+- Isolated components: `Sonnet`
+- Complete frontend-backend integration: `Opus`
+- Real-time dashboard: `Sonnet+`
+
+**Database Operations**:
+- Query optimization: `Sonnet`
+- Complex schema migration: `Opus`
+- Performance tuning: `Sonnet`
+
+**DevOps/Docker**:
+- Simple containers: `Haiku`
+- Multi-stage builds: `Sonnet`
+- Kubernetes orchestration: `Opus`
+
+#### Esempi Pratici di Selezione
+
+```yaml
+Example 1: "Add email validation to Laravel API"
+Analysis:
+  - domainCount: 1 (backend)
+  - interdependencies: 1 (API layer only)
+  - criticalityLevel: low
+  - architecturalImpact: false
+Result: Haiku (score: 2.5)
+
+Example 2: "Implement real-time notification system"
+Analysis:
+  - domainCount: 3 (backend, frontend, infrastructure)
+  - interdependencies: 4 (WebSocket, database, cache, UI)
+  - criticalityLevel: high
+  - architecturalImpact: true
+  - teamCollaboration: true
+Result: Opus (score: 13)
+
+Example 3: "Optimize Eloquent queries for dashboard"
+Analysis:
+  - domainCount: 2 (database, backend)
+  - interdependencies: 2 (ORM, query optimization)
+  - criticalityLevel: medium
+  - architecturalImpact: false
+Result: Sonnet (score: 6)
 ```
 
 ## Stack-Specific Configurations
