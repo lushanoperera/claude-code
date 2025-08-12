@@ -481,4 +481,4 @@ See [CREDITS.md](CREDITS.md) for detailed attributions and licensing information
 
 **Built with ❤️ for the Claude Code community**
 
-*Last Updated: January 2025*
+*Last Updated: August 2025*
