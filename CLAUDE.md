@@ -154,70 +154,109 @@ Model Recommendation: Opus (maximum complexity)
 
 ### Orchestration Workflow
 
-#### 1. Task Analysis Phase
+#### 1. Task Analysis Phase (OPUS 4.1)
 ```typescript
 interface TaskAnalysis {
+  phase: 'planning' | 'implementation' | 'review';  // NEW: Phase detection
   complexity: 'simple' | 'medium' | 'complex' | 'enterprise';
   domains: string[];
   estimatedAgents: number;
   criticalPath: string[];
-  modelRecommendation: 'haiku' | 'sonnet' | 'opus';
+  modelRecommendation: 'haiku' | 'sonnet' | 'opus-4.1';  // Updated with Opus 4.1
+  planningModel: 'opus-4.1';  // Always Opus for planning
+  implementationModel: 'haiku' | 'sonnet';  // Cost-effective for coding
 }
 ```
 
-#### 2. Agent Assignment Strategy
-1. **Identify Primary Domain**: What is the main task area?
-2. **Map to Specialist Agent**: Assign primary agent based on expertise
-3. **Identify Dependencies**: What other domains are involved?
-4. **Plan Coordination**: How to orchestrate collaboration?
+#### 2. Two-Phase Agent Assignment Strategy
 
-#### 3. Execution Orchestration
-- **Sequential**: For tasks with tight dependencies
-- **Parallel**: For independent tasks that can be parallelized
-- **Pipeline**: For workflows with handoffs between agents
+**Phase 1: Planning (OPUS 4.1)**
+1. **Analyze Request**: Determine if planning is needed
+2. **Design Architecture**: Create system design with Opus 4.1
+3. **Break Down Tasks**: Decompose into implementable units
+4. **Assign Implementation Agents**: Select agents for Phase 2
+
+**Phase 2: Implementation (SONNET/HAIKU)**
+1. **Execute Plan**: Implement the designed solution
+2. **Coordinate Agents**: Manage multi-agent execution
+3. **Validate Results**: Ensure implementation matches plan
+4. **Optimize Performance**: Fine-tune as needed
+
+#### 3. Execution Orchestration Patterns
+- **Planning-First**: Opus 4.1 creates plan → Sonnet/Haiku implement
+- **Review-Loop**: Implementation → Opus 4.1 review → Refinement
+- **Hybrid Pipeline**: Planning and implementation in parallel streams
 
 ### Workflow Templates
 
-#### Template: Feature Development
+#### Template: Feature Development (Two-Phase Approach)
 ```yaml
 name: "full-stack-feature-development"
 trigger: "complex feature requested by user"
-phases:
-  1_analysis:
-    agent: fullstack-developer
-    tasks: [requirements, architecture, tech_stack]
-  2_backend:
+
+planning_phase:  # OPUS 4.1
+  model: opus-4.1
+  agents: [architect-reviewer, workflow-orchestrator]
+  tasks:
+    - requirements_analysis
+    - architecture_design
+    - task_breakdown
+    - agent_assignment
+    - risk_assessment
+
+implementation_phase:  # SONNET/HAIKU
+  1_backend:
+    model: sonnet
     agent: laravel-specialist | php-pro
     tasks: [database, api, security]
-  3_frontend:
+  2_frontend:
+    model: sonnet
     agent: react-specialist | ui-engineer
     tasks: [components, state, integration]
-  4_integration:
+  3_integration:
+    model: sonnet
     agent: fullstack-developer
     tasks: [testing, deployment, monitoring]
-  5_quality:
-    agents: [qa-expert, security-auditor]
-    tasks: [testing, security_review]
+  4_quality:
+    model: sonnet
+    agents: [qa-expert, test-automator]
+    tasks: [testing, validation]
+
+review_phase:  # OPUS 4.1 (if architectural impact)
+  model: opus-4.1
+  agents: [senior-code-reviewer, security-auditor]
+  tasks: [architecture_review, security_audit]
 ```
 
-#### Template: Performance Optimization
+#### Template: Performance Optimization (Two-Phase Approach)
 ```yaml
 name: "performance-optimization"
 trigger: "performance issues reported"
-phases:
-  1_analysis:
-    agent: performance-engineer
-    tasks: [profiling, bottleneck_identification]
-  2_database:
+
+planning_phase:  # OPUS 4.1
+  model: opus-4.1
+  agent: architect-reviewer
+  tasks:
+    - performance_analysis
+    - bottleneck_identification
+    - optimization_strategy
+    - priority_ranking
+
+implementation_phase:  # SONNET/HAIKU
+  1_database:
+    model: sonnet
     agent: database-optimizer
     tasks: [query_optimization, indexing]
-  3_backend:
+  2_backend:
+    model: sonnet
     agent: php-pro | laravel-specialist
     tasks: [code_optimization, caching]
-  4_frontend:
+  3_frontend:
+    model: haiku  # Simple optimizations
     agent: ui-engineer
     tasks: [bundle_optimization, lazy_loading]
-  5_infrastructure:
+  4_infrastructure:
+    model: sonnet
     agent: devops-engineer
     tasks: [server_optimization, cdn_setup]
 ```
@@ -251,9 +290,18 @@ phases:
 
 ### Model Selection Guidelines
 
-#### Automatic Model Selection Algorithm
+#### 🎯 Planning vs Implementation Model Strategy
+
+**CORE PRINCIPLE**: Opus 4.1 for planning and architecture, Sonnet/Haiku for implementation
 
 ```typescript
+interface TaskType {
+  phase: 'planning' | 'implementation' | 'review';
+  requiresReasoning: boolean;
+  requiresCreativity: boolean;
+  requiresExecution: boolean;
+}
+
 interface TaskComplexity {
   domainCount: number;        // Numero di domini tecnici coinvolti
   interdependencies: number;  // Livello di interconnessione tra componenti
@@ -261,9 +309,72 @@ interface TaskComplexity {
   timeConstraint: 'none' | 'moderate' | 'urgent';
   architecturalImpact: boolean; // Se modifica architettura esistente
   teamCollaboration: boolean;   // Se richiede coordinazione multi-agent
+  taskType: TaskType;          // NEW: Planning vs Implementation
 }
 
-function calculateComplexityScore(task: TaskComplexity): number {
+function selectOptimalModel(task: TaskComplexity): ModelRecommendation {
+  // OPUS 4.1 for all planning activities
+  if (task.taskType.phase === 'planning') {
+    return {
+      model: 'opus-4.1',
+      reason: 'Planning, architecture, and task breakdown require maximum reasoning',
+      confidence: 0.99,
+      agents: ['architect-reviewer', 'workflow-orchestrator', 'multi-agent-coordinator']
+    };
+  }
+  
+  // OPUS 4.1 for critical architectural reviews
+  if (task.taskType.phase === 'review' && task.architecturalImpact) {
+    return {
+      model: 'opus-4.1',
+      reason: 'Architectural review requires deep analytical capabilities',
+      confidence: 0.95,
+      agents: ['senior-code-reviewer', 'architect-reviewer', 'security-auditor']
+    };
+  }
+  
+  // Implementation phase - use cost-effective models
+  if (task.taskType.phase === 'implementation') {
+    const score = calculateImplementationScore(task);
+    
+    // Complex implementation still uses Sonnet
+    if (score >= 6 || task.teamCollaboration) {
+      return {
+        model: 'sonnet-4',
+        reason: 'Complex implementation with multi-agent coordination',
+        confidence: 0.85,
+        agents: getImplementationAgents(task)
+      };
+    }
+    
+    // Simple implementation uses Haiku
+    if (score <= 3 && task.timeConstraint !== 'none') {
+      return {
+        model: 'haiku-3.5',
+        reason: 'Simple implementation, optimized for speed',
+        confidence: 0.8,
+        agents: getImplementationAgents(task)
+      };
+    }
+    
+    // Default Sonnet for intermediate implementation
+    return {
+      model: 'sonnet-4',
+      reason: 'Standard implementation with good quality/speed balance',
+      confidence: 0.75,
+      agents: getImplementationAgents(task)
+    };
+  }
+  
+  // Default fallback
+  return {
+    model: 'sonnet-4',
+    reason: 'Default model for unspecified tasks',
+    confidence: 0.7
+  };
+}
+
+function calculateImplementationScore(task: TaskComplexity): number {
   let score = 0;
   
   // Base score for domains
@@ -277,15 +388,15 @@ function calculateComplexityScore(task: TaskComplexity): number {
     'low': 1,
     'medium': 1.5, 
     'high': 2,
-    'critical': 3
+    'critical': 2.5  // Reduced from 3 since Opus handles critical planning
   };
   score *= criticalityMultiplier[task.criticalityLevel];
   
   // Penalty for urgency (faster models)
   if (task.timeConstraint === 'urgent') score *= 0.7;
   
-  // Bonus for architectural impact
-  if (task.architecturalImpact) score += 3;
+  // Reduced bonus for architectural impact (Opus handles architecture)
+  if (task.architecturalImpact) score += 1;
   
   // Bonus for multi-agent collaboration
   if (task.teamCollaboration) score += 2;
@@ -293,94 +404,158 @@ function calculateComplexityScore(task: TaskComplexity): number {
   return Math.round(score);
 }
 
-function selectOptimalModel(task: TaskComplexity): ModelRecommendation {
-  const score = calculateComplexityScore(task);
+function getImplementationAgents(task: TaskComplexity): string[] {
+  // Return appropriate implementation agents based on domain
+  const agentMap = {
+    backend: ['php-pro', 'laravel-specialist', 'backend-developer'],
+    frontend: ['ui-engineer', 'react-specialist', 'frontend-developer'],
+    database: ['sql-pro', 'database-administrator'],
+    devops: ['docker-specialist', 'devops-engineer'],
+    security: ['security-engineer', 'penetration-tester']
+  };
   
-  // Opus for critical architectural tasks
-  if (score >= 10 || task.architecturalImpact && task.criticalityLevel === 'critical') {
+  // Logic to select agents based on task.domainCount and other factors
+  return [];  // Implement based on specific requirements
+}
+```
+
+#### Automatic Phase Detection
+
+```typescript
+// Automatically detect if task is planning or implementation
+function detectTaskPhase(userRequest: string): TaskType {
+  const planningKeywords = [
+    'plan', 'design', 'architect', 'structure', 'organize',
+    'strategy', 'approach', 'how should', 'what\'s the best way',
+    'recommend', 'suggest', 'analyze', 'review architecture',
+    'break down', 'roadmap', 'blueprint', 'specification'
+  ];
+  
+  const implementationKeywords = [
+    'implement', 'code', 'write', 'create', 'build', 'fix',
+    'debug', 'update', 'modify', 'add', 'remove', 'install',
+    'deploy', 'run', 'execute', 'test', 'optimize code'
+  ];
+  
+  const reviewKeywords = [
+    'review', 'audit', 'check', 'validate', 'verify',
+    'analyze code', 'security review', 'performance review'
+  ];
+  
+  const request = userRequest.toLowerCase();
+  
+  const planningScore = planningKeywords.filter(k => request.includes(k)).length;
+  const implementationScore = implementationKeywords.filter(k => request.includes(k)).length;
+  const reviewScore = reviewKeywords.filter(k => request.includes(k)).length;
+  
+  // Determine primary phase
+  if (planningScore > implementationScore && planningScore > reviewScore) {
     return {
-      model: 'opus',
-      reason: 'Critical architecture requires maximum reasoning',
-      confidence: 0.95
+      phase: 'planning',
+      requiresReasoning: true,
+      requiresCreativity: true,
+      requiresExecution: false
     };
   }
   
-  // Sonnet for complex but non-critical tasks
-  if (score >= 6 || task.teamCollaboration) {
+  if (reviewScore > implementationScore) {
     return {
-      model: 'sonnet',
-      reason: 'Balanced complexity, multi-agent orchestration',
-      confidence: 0.85
+      phase: 'review',
+      requiresReasoning: true,
+      requiresCreativity: false,
+      requiresExecution: false
     };
   }
   
-  // Haiku for simple and fast tasks
-  if (score <= 3 && task.timeConstraint !== 'none') {
-    return {
-      model: 'haiku',
-      reason: 'Simple task, optimized for speed',
-      confidence: 0.8
-    };
-  }
-  
-  // Default Sonnet for intermediate cases
   return {
-    model: 'sonnet',
-    reason: 'Optimal quality/speed balance',
-    confidence: 0.75
+    phase: 'implementation',
+    requiresReasoning: false,
+    requiresCreativity: false,
+    requiresExecution: true
   };
 }
 ```
 
 #### Context-Specific Model Selection
 
+**Planning & Architecture Phase (OPUS 4.1)**:
+- System design and architecture planning
+- Task breakdown and roadmap creation
+- Technology stack selection
+- Security architecture design
+- Performance strategy planning
+- Multi-agent orchestration planning
+
+**Implementation Phase (SONNET/HAIKU)**:
+
 **PHP/Laravel Development**:
 - Simple tasks (CRUD, validations): `Haiku`
 - Complex APIs, authentication: `Sonnet`
-- Microservices architecture: `Opus`
+- Code implementation: `Sonnet`
 
 **Full Stack Features**:
 - Isolated components: `Sonnet`
-- Complete frontend-backend integration: `Opus`
-- Real-time dashboard: `Sonnet+`
+- Integration implementation: `Sonnet`
+- Real-time features: `Sonnet`
 
 **Database Operations**:
-- Query optimization: `Sonnet`
-- Complex schema migration: `Opus`
-- Performance tuning: `Sonnet`
+- Query writing: `Sonnet`
+- Schema implementation: `Sonnet`
+- Performance tuning execution: `Sonnet`
 
 **DevOps/Docker**:
 - Simple containers: `Haiku`
 - Multi-stage builds: `Sonnet`
-- Kubernetes orchestration: `Opus`
+- Kubernetes configs: `Sonnet`
 
-#### Esempi Pratici di Selezione
+#### Esempi Pratici di Selezione con Planning vs Implementation
 
 ```yaml
-Example 1: "Add email validation to Laravel API"
+Example 1: "Plan the architecture for a real-time notification system"
+Phase: Planning
 Analysis:
-  - domainCount: 1 (backend)
-  - interdependencies: 1 (API layer only)
-  - criticalityLevel: low
-  - architecturalImpact: false
-Result: Haiku (score: 2.5)
-
-Example 2: "Implement real-time notification system"
-Analysis:
-  - domainCount: 3 (backend, frontend, infrastructure)
-  - interdependencies: 4 (WebSocket, database, cache, UI)
-  - criticalityLevel: high
+  - taskType: planning
   - architecturalImpact: true
-  - teamCollaboration: true
-Result: Opus (score: 13)
+  - requiresReasoning: true
+Result: OPUS 4.1 (planning phase)
+Agents: [architect-reviewer, workflow-orchestrator]
 
-Example 3: "Optimize Eloquent queries for dashboard"
+Example 2: "Implement the WebSocket server for notifications"
+Phase: Implementation
 Analysis:
-  - domainCount: 2 (database, backend)
-  - interdependencies: 2 (ORM, query optimization)
+  - taskType: implementation
+  - domainCount: 2 (backend, infrastructure)
+  - interdependencies: 2
   - criticalityLevel: medium
-  - architecturalImpact: false
-Result: Sonnet (score: 6)
+Result: Sonnet (implementation phase, score: 6)
+Agents: [websocket-engineer, backend-developer]
+
+Example 3: "How should I structure my Laravel microservices?"
+Phase: Planning
+Analysis:
+  - taskType: planning
+  - architecturalImpact: true
+  - requiresReasoning: true
+Result: OPUS 4.1 (architectural planning)
+Agents: [architect-reviewer, laravel-specialist]
+
+Example 4: "Write the authentication middleware"
+Phase: Implementation
+Analysis:
+  - taskType: implementation
+  - domainCount: 1 (backend)
+  - criticalityLevel: medium
+Result: Sonnet (implementation, score: 4.5)
+Agents: [laravel-specialist, security-engineer]
+
+Example 5: "Review our API architecture for scalability"
+Phase: Review
+Analysis:
+  - taskType: review
+  - architecturalImpact: true
+  - requiresReasoning: true
+Result: OPUS 4.1 (architectural review)
+Agents: [architect-reviewer, senior-code-reviewer]
 ```
 
 ## Stack-Specific Configurations
@@ -746,25 +921,35 @@ const modernWorkflow: ModernOrchestration = {
 
 ### AI-Driven Development Pattern 2025
 ```yaml
-pattern: "AI-First Development"
+pattern: "AI-First Development with Opus Planning"
 phases:
-  1_context_analysis:
-    agents: [context-fetcher, codebase-analyzer]
+  1_context_analysis:  # OPUS 4.1
+    model: opus-4.1
+    agents: [context-fetcher, architect-reviewer]
     tasks: [understand_project, analyze_architecture, identify_patterns]
     
-  2_intelligent_planning:
-    agents: [architect-reviewer, senior-code-reviewer]
-    tasks: [design_review, security_analysis, performance_planning]
+  2_intelligent_planning:  # OPUS 4.1
+    model: opus-4.1
+    agents: [workflow-orchestrator, senior-code-reviewer]
+    tasks: [design_review, task_breakdown, agent_selection, performance_planning]
     
-  3_multi_agent_execution:
+  3_multi_agent_execution:  # SONNET
+    model: sonnet
     agents: [backend-typescript-architect, ui-engineer, security-engineer]
     coordination: parallel_with_synchronization
     
-  4_quality_assurance:
-    agents: [qa-expert, test-automator, security-auditor]
-    validation: [automated_testing, security_scan, performance_check]
+  4_quality_assurance:  # SONNET
+    model: sonnet
+    agents: [qa-expert, test-automator]
+    validation: [automated_testing, integration_testing, performance_check]
     
-  5_deployment_automation:
+  5_architectural_review:  # OPUS 4.1
+    model: opus-4.1
+    agents: [architect-reviewer, security-auditor]
+    tasks: [final_review, security_audit, architecture_validation]
+    
+  6_deployment_automation:  # SONNET
+    model: sonnet
     agents: [devops-engineer, cloud-architect]
     tasks: [containerization, orchestration, monitoring_setup]
 ```
@@ -928,10 +1113,11 @@ See [CREDITS.md](~/Sites/claude-code-config/CREDITS.md) for full attributions.
 
 ---
 
-**Version**: 3.0 🤖  
+**Version**: 3.1 🤖  
 **Last Update**: 2025-08-12  
-**Features**: Sonnet 4, Multi-Modal AI, Advanced Orchestration, Predictive Intelligence  
+**Features**: Opus 4.1 for Planning, Sonnet for Implementation, Two-Phase Development, Intelligent Model Selection  
+**Key Innovation**: Separazione tra planning (Opus 4.1) e implementation (Sonnet/Haiku) per ottimizzazione costi-qualità  
 **Next Revision**: Continuous AI-driven evolution  
 
 ---
-*Next-generation intelligent orchestration system with advanced AI, multi-modal capabilities, and predictive learning for future full-stack development*
+*Next-generation intelligent orchestration system with Opus 4.1 planning capabilities and cost-optimized implementation strategy for enterprise-grade full-stack development*
