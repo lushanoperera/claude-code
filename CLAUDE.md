@@ -2,38 +2,74 @@
 
 ## 🔄 Configuration Sync Strategy
 
-### Repository Location
+### Repository Architecture
 - **Development Repository**: `~/Sites/claude-code-config`
-- **Active Configuration**: `~/.claude/`
+- **Active Configuration**: `~/.claude/` (utilizzata da Claude Code)
 - **Sync Script**: `~/.claude/sync-config.sh`
+- **Setup Guide**: `~/.claude/SETUP-GUIDE.md`
 
-### Sync Commands
+### 🚀 Quick Setup
 ```bash
-# Sync from Claude to Repository (for backup/commit)
-~/.claude/sync-config.sh to-repo
+# 1. Esegui setup automatico
+~/.claude/setup-sync.sh
 
-# Sync from Repository to Claude (after pull/clone)
-~/.claude/sync-config.sh from-repo
+# 2. Attiva comandi rapidi (aggiungi al tuo ~/.zshrc o ~/.bashrc)
+source ~/.claude/sync-aliases.sh
 
-# Check sync status
-~/.claude/sync-config.sh status
-
-# Watch for changes and auto-sync
-~/.claude/sync-config.sh watch
+# 3. Verifica setup
+claude-sync-status
 ```
 
-### Auto-Sync Workflow
-1. **Local Changes**: Edit `~/.claude/CLAUDE.md` normally
-2. **Auto-Sync**: Run `sync-config.sh watch` in background
-3. **Git Commit**: Changes auto-committed with timestamp
-4. **Manual Push**: Push to GitHub when ready
+### 📝 Comandi Rapidi (dopo setup)
+```bash
+# Sincronizzazione
+claude-sync-to          # Claude → Repository
+claude-sync-from        # Repository → Claude
+claude-sync-watch       # Auto-sync continuo
 
-### Files Synced
-- `CLAUDE.md` - Main configuration
-- `settings.json` - Claude Code settings
-- `agents/` - Agent specifications
-- `templates/` - Code templates
-- `workflows/` - Workflow definitions
+# Git workflow
+claude-commit "msg"     # Sync + commit
+claude-push "msg"       # Sync + commit + push
+claude-pull             # Pull + sync da repository
+
+# Navigazione
+claude-config          # Vai a ~/.claude
+claude-repo            # Vai al repository
+
+# Aiuto
+claude-help            # Lista tutti i comandi
+```
+
+### 🔄 Workflow Quotidiano
+```bash
+# Modifica configurazione normalmente
+nano ~/.claude/CLAUDE.md
+
+# Sync e commit quando pronto
+claude-commit "Added new Laravel workflows"
+
+# Push occasionalmente
+cd ~/Sites/claude-code-config && git push
+```
+
+### 📦 File Sincronizzati Automaticamente
+- `CLAUDE.md` - Configurazione principale
+- `settings.json` - Impostazioni Claude Code
+- `agents/` - Specifiche agenti (100+ files)
+- `templates/` - Template di codice
+- `workflows/` - Definizioni workflow
+
+### 🛡️ Sicurezza e Backup
+- ✅ Backup automatico prima di ogni sync da repository
+- ✅ File sensibili (.env) esclusi da git
+- ✅ Backup conservati in `~/.claude/backups/`
+
+### 📖 Documentazione Completa
+Per setup dettagliato, troubleshooting e casi d'uso avanzati:
+```bash
+# Leggi la guida completa
+less ~/.claude/SETUP-GUIDE.md
+```
 
 ## Primary Technical Information Source
 **Context7**: Integrated MCP service for real-time technical information
