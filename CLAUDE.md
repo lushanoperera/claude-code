@@ -71,11 +71,20 @@ Per setup dettagliato, troubleshooting e casi d'uso avanzati:
 less ~/.claude/SETUP-GUIDE.md
 ```
 
-## Primary Technical Information Source
+## Primary Technical Information Sources
+
+### Context7 MCP
 **Context7**: Integrated MCP service for real-time technical information
 - **Endpoint**: https://mcp.context7.com/mcp  
 - **Priority**: First source for technical documentation, API references, and best practices
 - **Fallback**: If Context7 is unreachable, use standard knowledge base
+
+### Playwright MCP (Browser Automation)
+**Playwright**: MCP server for browser automation and testing
+- **Purpose**: Web automation, E2E testing, content extraction
+- **Features**: Accessibility tree-based (no screenshots needed), multi-browser support
+- **Integration**: Natural language commands for browser control
+- **Use Cases**: Testing Laravel/WordPress apps, form automation, API testing via UI
 
 ## Developer Profile
 **Role**: Full Stack Developer  
