@@ -1,0 +1,151 @@
+{
+  "task_patterns": {
+    "laravel_api_development": {
+      "signature": {
+        "keywords": ["api", "endpoint", "laravel", "route", "controller"],
+        "complexity_indicators": ["authentication", "middleware", "validation", "relationships"],
+        "success_patterns": [
+          "form_request_validation",
+          "api_resource_usage", 
+          "proper_error_handling",
+          "rate_limiting"
+        ]
+      },
+      "performance_history": [],
+      "best_agent_combinations": [
+        {
+          "agents": ["laravel-specialist", "api-designer", "security-engineer"],
+          "success_rate": 0.0,
+          "avg_time": 0,
+          "user_satisfaction": 0.0,
+          "sample_size": 0
+        }
+      ],
+      "common_pitfalls": [
+        "missing_validation",
+        "n+1_query_problems", 
+        "inconsistent_response_format",
+        "missing_error_handling"
+      ],
+      "optimization_tips": [
+        "use_api_resources",
+        "implement_proper_validation",
+        "add_rate_limiting",
+        "ensure_consistent_responses"
+      ]
+    },
+    "database_optimization": {
+      "signature": {
+        "keywords": ["database", "query", "slow", "optimize", "performance"],
+        "complexity_indicators": ["joins", "indexes", "migration", "relationships", "n+1"],
+        "success_patterns": [
+          "proper_indexing",
+          "query_optimization",
+          "eager_loading",
+          "database_monitoring"
+        ]
+      },
+      "performance_history": [],
+      "best_agent_combinations": [
+        {
+          "agents": ["database-specialist", "performance-engineer", "laravel-specialist"],
+          "success_rate": 0.0,
+          "avg_time": 0,
+          "user_satisfaction": 0.0,
+          "sample_size": 0
+        }
+      ],
+      "common_pitfalls": [
+        "missing_indexes",
+        "inefficient_queries",
+        "n+1_problems",
+        "large_result_sets"
+      ],
+      "optimization_tips": [
+        "add_proper_indexes",
+        "use_eager_loading", 
+        "optimize_query_structure",
+        "implement_pagination"
+      ]
+    },
+    "docker_containerization": {
+      "signature": {
+        "keywords": ["docker", "container", "compose", "build", "deploy"],
+        "complexity_indicators": ["multi-stage", "orchestration", "scaling", "networking"],
+        "success_patterns": [
+          "multi_stage_builds",
+          "security_hardening",
+          "resource_optimization",
+          "proper_networking"
+        ]
+      },
+      "performance_history": [],
+      "best_agent_combinations": [
+        {
+          "agents": ["docker-specialist", "devops-engineer", "security-engineer"],
+          "success_rate": 0.0,
+          "avg_time": 0,
+          "user_satisfaction": 0.0,
+          "sample_size": 0
+        }
+      ],
+      "common_pitfalls": [
+        "large_image_sizes",
+        "security_vulnerabilities",
+        "inefficient_builds",
+        "network_misconfigurations"
+      ],
+      "optimization_tips": [
+        "use_multi_stage_builds",
+        "implement_security_scanning",
+        "optimize_layer_caching",
+        "configure_proper_networks"
+      ]
+    }
+  },
+  "model_performance": {
+    "haiku": {
+      "complexity_range": [1, 4],
+      "avg_completion_time": 0,
+      "success_rate": 0.0,
+      "quality_score": 0.0,
+      "cost_efficiency": 1.0,
+      "best_use_cases": ["simple_crud", "basic_validation", "quick_fixes"]
+    },
+    "sonnet": {
+      "complexity_range": [3, 8],
+      "avg_completion_time": 0,
+      "success_rate": 0.0,
+      "quality_score": 0.0,
+      "cost_efficiency": 0.7,
+      "best_use_cases": ["api_development", "optimization", "moderate_complexity"]
+    },
+    "opus": {
+      "complexity_range": [7, 10],
+      "avg_completion_time": 0,
+      "success_rate": 0.0,
+      "quality_score": 0.0,
+      "cost_efficiency": 0.3,
+      "best_use_cases": ["architecture_design", "complex_problems", "critical_systems"]
+    }
+  },
+  "learning_settings": {
+    "learning_rate": 0.1,
+    "confidence_threshold": 0.7,
+    "minimum_samples_for_recommendation": 3,
+    "performance_weight": {
+      "success_rate": 0.4,
+      "user_satisfaction": 0.3,
+      "completion_time": 0.2,
+      "code_quality": 0.1
+    },
+    "auto_optimization": {
+      "enabled": true,
+      "optimization_frequency": "weekly",
+      "suggestion_threshold": 0.15
+    }
+  },
+  "optimization_suggestions": [],
+  "schema_version": "1.0",
+  "last_learning_update": "2025-08-12T16:30:00Z"
+}

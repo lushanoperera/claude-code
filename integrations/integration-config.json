@@ -1,0 +1,334 @@
+{
+  "integrations": {
+    "github": {
+      "id": "github_main",
+      "name": "GitHub Integration",
+      "type": "version_control",
+      "status": "inactive",
+      "config": {
+        "api_url": "https://api.github.com",
+        "owner": "",
+        "default_repos": [],
+        "webhook_base_url": "",
+        "auto_pr_creation": true,
+        "auto_branch_creation": true,
+        "pr_template_path": ".github/pull_request_template.md"
+      },
+      "capabilities": [
+        {
+          "action": "create_branch",
+          "description": "Create feature branches for tasks",
+          "required_permissions": ["repo", "workflow"],
+          "supports_realtime": false
+        },
+        {
+          "action": "create_pr",
+          "description": "Create pull requests from completed tasks",
+          "required_permissions": ["repo"],
+          "supports_realtime": false
+        },
+        {
+          "action": "sync_project_context",
+          "description": "Extract project context from repository",
+          "required_permissions": ["repo:read"],
+          "supports_realtime": true
+        },
+        {
+          "action": "setup_ci_workflows",
+          "description": "Auto-setup GitHub Actions workflows",
+          "required_permissions": ["repo", "workflow"],
+          "supports_realtime": false
+        }
+      ],
+      "webhooks": [
+        {
+          "event": "push",
+          "handler": "handlePushEvent",
+          "enabled": true
+        },
+        {
+          "event": "pull_request",
+          "handler": "handlePullRequestEvent", 
+          "enabled": true
+        }
+      ],
+      "auth": {
+        "type": "token",
+        "token": "",
+        "scopes": ["repo", "workflow", "write:packages"]
+      }
+    },
+    
+    "jira": {
+      "id": "jira_main",
+      "name": "Jira Integration",
+      "type": "project_management",
+      "status": "inactive",
+      "config": {
+        "base_url": "",
+        "project_keys": [],
+        "auto_status_updates": true,
+        "time_tracking": true,
+        "comment_on_progress": true
+      },
+      "capabilities": [
+        {
+          "action": "create_task_from_issue",
+          "description": "Convert Jira issues to Claude Code tasks",
+          "required_permissions": ["read:jira-work"],
+          "supports_realtime": true
+        },
+        {
+          "action": "update_issue_progress",
+          "description": "Update Jira issues with task progress",
+          "required_permissions": ["write:jira-work"],
+          "supports_realtime": false
+        },
+        {
+          "action": "log_work_time",
+          "description": "Log work time to Jira issues",
+          "required_permissions": ["write:jira-work"],
+          "supports_realtime": false
+        }
+      ],
+      "auth": {
+        "type": "basic",
+        "username": "",
+        "api_token": ""
+      }
+    },
+    
+    "slack": {
+      "id": "slack_main",
+      "name": "Slack Integration",
+      "type": "communication",
+      "status": "inactive",
+      "config": {
+        "default_channel": "#development",
+        "notify_on_completion": true,
+        "notify_on_errors": true,
+        "create_task_channels": false,
+        "daily_reports": true
+      },
+      "capabilities": [
+        {
+          "action": "send_notifications",
+          "description": "Send task completion and error notifications",
+          "required_permissions": ["chat:write"],
+          "supports_realtime": true
+        },
+        {
+          "action": "create_channels",
+          "description": "Create dedicated channels for complex tasks",
+          "required_permissions": ["channels:write"],
+          "supports_realtime": false
+        },
+        {
+          "action": "send_reports",
+          "description": "Send daily/weekly performance reports",
+          "required_permissions": ["chat:write"],
+          "supports_realtime": false
+        }
+      ],
+      "auth": {
+        "type": "oauth",
+        "bot_token": "",
+        "app_token": ""
+      }
+    },
+    
+    "docker_hub": {
+      "id": "docker_hub_main",
+      "name": "Docker Hub Integration",
+      "type": "deployment",
+      "status": "inactive",
+      "config": {
+        "username": "",
+        "default_namespace": "",
+        "auto_build_triggers": true,
+        "vulnerability_scanning": true
+      },
+      "capabilities": [
+        {
+          "action": "push_images",
+          "description": "Push built container images",
+          "required_permissions": ["write"],
+          "supports_realtime": false
+        },
+        {
+          "action": "webhook_notifications",
+          "description": "Receive build completion notifications",
+          "required_permissions": ["read"],
+          "supports_realtime": true
+        }
+      ],
+      "auth": {
+        "type": "token",
+        "username": "",
+        "access_token": ""
+      }
+    },
+    
+    "datadog": {
+      "id": "datadog_main",
+      "name": "DataDog Monitoring",
+      "type": "monitoring",
+      "status": "inactive",
+      "config": {
+        "api_key": "",
+        "app_key": "",
+        "default_dashboard": "",
+        "alert_channels": ["#alerts"],
+        "custom_metrics": true
+      },
+      "capabilities": [
+        {
+          "action": "send_metrics",
+          "description": "Send custom metrics for task performance",
+          "required_permissions": ["metrics:write"],
+          "supports_realtime": true
+        },
+        {
+          "action": "create_dashboards",
+          "description": "Create monitoring dashboards for projects",
+          "required_permissions": ["dashboards:write"],
+          "supports_realtime": false
+        },
+        {
+          "action": "receive_alerts",
+          "description": "Receive and process monitoring alerts",
+          "required_permissions": ["monitors:read"],
+          "supports_realtime": true
+        }
+      ],
+      "auth": {
+        "type": "api_key",
+        "api_key": "",
+        "app_key": ""
+      }
+    }
+  },
+  
+  "automation_rules": {
+    "github_auto_pr": {
+      "enabled": true,
+      "trigger": "task_completion",
+      "conditions": [
+        "task.success == true",
+        "task.type.includes('development')",
+        "project.has_git_repo == true"
+      ],
+      "actions": [
+        "create_feature_branch",
+        "commit_changes",
+        "create_pull_request"
+      ]
+    },
+    
+    "jira_status_sync": {
+      "enabled": true,
+      "trigger": "task_progress_update",
+      "conditions": [
+        "task.external_source == 'jira'",
+        "task.external_id.exists"
+      ],
+      "actions": [
+        "update_jira_status",
+        "log_work_time",
+        "add_progress_comment"
+      ]
+    },
+    
+    "slack_notifications": {
+      "enabled": true,
+      "trigger": ["task_completion", "task_error"],
+      "conditions": [
+        "task.complexity_score >= 5",
+        "OR task.success == false"
+      ],
+      "actions": [
+        "send_completion_notification",
+        "update_team_dashboard"
+      ]
+    },
+    
+    "monitoring_metrics": {
+      "enabled": true,
+      "trigger": "task_completion",
+      "conditions": ["always"],
+      "actions": [
+        "send_performance_metrics",
+        "update_success_rate_gauge",
+        "check_performance_thresholds"
+      ]
+    }
+  },
+  
+  "workflow_templates": {
+    "laravel_development": {
+      "name": "Laravel Development Workflow",
+      "description": "Complete Laravel development workflow with CI/CD",
+      "steps": [
+        {
+          "id": "github_branch",
+          "name": "Create GitHub Branch",
+          "integration": "github",
+          "action": "create_branch"
+        },
+        {
+          "id": "development",
+          "name": "Development Phase",
+          "integration": "claude_code",
+          "action": "execute_task"
+        },
+        {
+          "id": "github_pr",
+          "name": "Create Pull Request",
+          "integration": "github",
+          "action": "create_pr",
+          "depends_on": ["development"]
+        },
+        {
+          "id": "jira_update",
+          "name": "Update Jira Issue",
+          "integration": "jira",
+          "action": "update_issue_progress",
+          "depends_on": ["development"]
+        },
+        {
+          "id": "slack_notification",
+          "name": "Notify Team",
+          "integration": "slack",
+          "action": "send_notifications",
+          "depends_on": ["github_pr"]
+        }
+      ]
+    }
+  },
+  
+  "sync_settings": {
+    "global_sync_interval": 300,
+    "retry_attempts": 3,
+    "retry_backoff": "exponential",
+    "timeout_seconds": 30,
+    "batch_size": 100
+  },
+  
+  "webhook_security": {
+    "verify_signatures": true,
+    "allowed_ips": [],
+    "rate_limiting": {
+      "requests_per_minute": 60,
+      "burst_limit": 10
+    }
+  },
+  
+  "data_retention": {
+    "webhook_logs_days": 30,
+    "sync_history_days": 90,
+    "error_logs_days": 180
+  },
+  
+  "schema_version": "1.0",
+  "last_updated": "2025-08-12T17:30:00Z"
+}

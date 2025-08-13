@@ -1,0 +1,181 @@
+{
+  "metrics_configuration": {
+    "collection_settings": {
+      "enable_real_time_collection": true,
+      "buffer_size": 1000,
+      "flush_interval_seconds": 300,
+      "retention_days": 90,
+      "enable_detailed_logging": true
+    },
+    "alert_thresholds": {
+      "success_rate": {
+        "warning": 0.8,
+        "critical": 0.7,
+        "sample_size": 10
+      },
+      "completion_time": {
+        "warning": 1800,
+        "critical": 3600,
+        "sample_size": 5
+      },
+      "user_satisfaction": {
+        "warning": 4.0,
+        "critical": 3.5,
+        "sample_size": 5
+      },
+      "agent_efficiency": {
+        "warning": 0.7,
+        "critical": 0.6,
+        "sample_size": 10
+      },
+      "cost_efficiency": {
+        "warning": 0.8,
+        "critical": 0.6,
+        "sample_size": 20
+      }
+    },
+    "dashboard_refresh_intervals": {
+      "real_time_metrics": 30,
+      "performance_charts": 300,
+      "trend_analysis": 1800,
+      "reports": 3600
+    }
+  },
+  
+  "performance_baselines": {
+    "task_types": {
+      "laravel_crud_api": {
+        "expected_duration": 1800,
+        "target_success_rate": 0.95,
+        "quality_threshold": 0.85,
+        "typical_agents": ["laravel-specialist", "api-designer"]
+      },
+      "database_optimization": {
+        "expected_duration": 1200,
+        "target_success_rate": 0.9,
+        "quality_threshold": 0.9,
+        "typical_agents": ["database-specialist", "performance-engineer"]
+      },
+      "docker_setup": {
+        "expected_duration": 2400,
+        "target_success_rate": 0.88,
+        "quality_threshold": 0.85,
+        "typical_agents": ["docker-specialist", "devops-engineer"]
+      },
+      "wordpress_customization": {
+        "expected_duration": 2700,
+        "target_success_rate": 0.92,
+        "quality_threshold": 0.88,
+        "typical_agents": ["wordpress-expert", "ui-engineer"]
+      }
+    },
+    "agent_performance": {
+      "laravel-specialist": {
+        "efficiency_baseline": 0.85,
+        "satisfaction_baseline": 4.2,
+        "specialization_confidence": 0.95
+      },
+      "docker-specialist": {
+        "efficiency_baseline": 0.82,
+        "satisfaction_baseline": 4.0,
+        "specialization_confidence": 0.9
+      },
+      "database-specialist": {
+        "efficiency_baseline": 0.88,
+        "satisfaction_baseline": 4.1,
+        "specialization_confidence": 0.93
+      },
+      "fullstack-developer": {
+        "efficiency_baseline": 0.8,
+        "satisfaction_baseline": 4.0,
+        "specialization_confidence": 0.85
+      }
+    }
+  },
+  
+  "reporting_schedule": {
+    "daily_summary": {
+      "enabled": true,
+      "time": "09:00",
+      "recipients": ["user"],
+      "include_sections": ["overview", "alerts", "top_tasks"]
+    },
+    "weekly_report": {
+      "enabled": true,
+      "day": "monday",
+      "time": "08:00",
+      "recipients": ["user"],
+      "include_sections": [
+        "performance_summary",
+        "agent_analysis", 
+        "optimization_suggestions",
+        "learning_progress"
+      ]
+    },
+    "monthly_analysis": {
+      "enabled": true,
+      "day": 1,
+      "time": "09:00",
+      "recipients": ["user"],
+      "include_sections": [
+        "strategic_overview",
+        "template_evolution",
+        "cost_analysis",
+        "efficiency_trends",
+        "improvement_roadmap"
+      ]
+    }
+  },
+  
+  "visualization_settings": {
+    "chart_types": {
+      "completion_time_trend": "line",
+      "success_rate_gauge": "gauge",
+      "agent_performance": "radar",
+      "satisfaction_distribution": "histogram",
+      "task_category_breakdown": "pie",
+      "model_usage": "stacked_bar"
+    },
+    "color_schemes": {
+      "performance": ["#10B981", "#F59E0B", "#EF4444"],
+      "agents": ["#3B82F6", "#8B5CF6", "#06B6D4", "#84CC16"],
+      "satisfaction": ["#EF4444", "#F59E0B", "#10B981"]
+    },
+    "update_animations": true,
+    "interactive_filters": true
+  },
+  
+  "optimization_settings": {
+    "learning_sensitivity": 0.1,
+    "min_samples_for_recommendations": 5,
+    "confidence_threshold_for_changes": 0.8,
+    "auto_apply_optimizations": false,
+    "suggestion_frequency": "weekly"
+  },
+  
+  "privacy_settings": {
+    "anonymize_user_data": false,
+    "retain_feedback_text": true,
+    "share_anonymous_metrics": false,
+    "export_allowed": true
+  },
+  
+  "integration_settings": {
+    "external_analytics": {
+      "enabled": false,
+      "providers": []
+    },
+    "webhook_notifications": {
+      "enabled": false,
+      "endpoints": []
+    },
+    "export_formats": ["json", "csv", "pdf"],
+    "api_access": {
+      "enabled": false,
+      "rate_limit": 100
+    }
+  },
+  
+  "schema_version": "1.0",
+  "last_updated": "2025-08-12T17:00:00Z"
+}

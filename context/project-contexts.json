@@ -1,0 +1,43 @@
+{
+  "contexts": {},
+  "global_preferences": {
+    "developer_profile": {
+      "name": "disconnesso",
+      "experience_level": "senior",
+      "primary_stack": ["PHP", "Laravel", "JavaScript", "Docker"],
+      "preferred_patterns": {
+        "code_style": "modern_php_8.3",
+        "testing_approach": "pest_driven",
+        "deployment_strategy": "docker_compose",
+        "database_preference": "mysql_with_optimization"
+      }
+    },
+    "model_preferences": {
+      "simple_tasks": "haiku",
+      "medium_complexity": "sonnet", 
+      "architecture_decisions": "opus",
+      "auto_selection": true
+    },
+    "notification_settings": {
+      "task_completion": true,
+      "optimization_suggestions": true,
+      "security_alerts": true,
+      "performance_warnings": true
+    },
+    "working_patterns": {
+      "timezone": "Europe/Rome",
+      "active_hours": "09:00-19:00",
+      "break_reminders": true,
+      "focus_mode_duration": "90min"
+    }
+  },
+  "learning_metrics": {
+    "total_tasks_completed": 0,
+    "average_satisfaction_score": 0.0,
+    "most_successful_agent_combinations": [],
+    "common_optimization_patterns": [],
+    "improvement_trends": []
+  },
+  "schema_version": "1.0",
+  "last_updated": "2025-08-12T16:00:00Z"
+}
