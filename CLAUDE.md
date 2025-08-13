@@ -1106,6 +1106,264 @@ const intelligenceEngine: IntelligenceLayer = {
 
 ---
 
+## 🧠 Claude Flow Integration - Advanced Hook System & Swarm Intelligence
+
+### Hook System Architecture (Inspired by Claude Flow)
+```typescript
+// Advanced hooks for workflow automation
+interface HookSystem {
+  preTaskHooks: {
+    taskAnalysis: boolean;           // Analyze task complexity before execution
+    agentAssignment: boolean;        // Auto-assign optimal agents
+    contextLoading: boolean;         // Load relevant context automatically
+    dependencyCheck: boolean;        // Verify all dependencies available
+  };
+  
+  postEditHooks: {
+    codeFormatting: boolean;         // Auto-format code after edits
+    syntaxValidation: boolean;       // Validate syntax immediately
+    testExecution: boolean;          // Run affected tests automatically
+    neuralTraining: boolean;         // Train neural patterns on success
+  };
+  
+  sessionHooks: {
+    autoSave: boolean;              // Save context periodically
+    memoryPersistence: boolean;     // Persist to SQLite automatically
+    summaryGeneration: boolean;     // Generate session summaries
+    patternExtraction: boolean;     // Extract successful patterns
+  };
+}
+
+const hookConfiguration: HookSystem = {
+  preTaskHooks: {
+    taskAnalysis: true,
+    agentAssignment: true,
+    contextLoading: true,
+    dependencyCheck: true
+  },
+  postEditHooks: {
+    codeFormatting: true,
+    syntaxValidation: true,
+    testExecution: true,
+    neuralTraining: true
+  },
+  sessionHooks: {
+    autoSave: true,
+    memoryPersistence: true,
+    summaryGeneration: true,
+    patternExtraction: true
+  }
+};
+```
+
+### SQLite Memory System (Claude Flow Pattern)
+```yaml
+memory_architecture:
+  database: SQLite
+  tables:
+    sessions:
+      - session_id
+      - project_context
+      - timestamp
+      - success_metrics
+    
+    patterns:
+      - pattern_id
+      - task_type
+      - solution_approach
+      - success_rate
+      - agent_combination
+    
+    contexts:
+      - context_id
+      - project_name
+      - tech_stack
+      - configurations
+      - dependencies
+    
+    learnings:
+      - learning_id
+      - pattern_reference
+      - improvement_suggestion
+      - validation_status
+
+  features:
+    - Cross-session memory persistence
+    - Query-based pattern retrieval
+    - Export/Import full projects
+    - Namespace segmentation by project
+    - Automatic backup and recovery
+```
+
+### Swarm Intelligence - Queen-Led Coordination
+```typescript
+// Hive-mind architecture with Queen agent
+interface SwarmOrchestration {
+  queenAgent: {
+    role: 'master_coordinator';
+    capabilities: [
+      'task_decomposition',
+      'agent_spawning',
+      'resource_allocation',
+      'fault_recovery'
+    ];
+    intelligenceLevel: 'opus-4.1';
+  };
+  
+  workerAgents: {
+    spawning: 'dynamic';           // Create agents as needed
+    poolSize: 'adaptive';          // Scale based on workload
+    specializations: string[];      // Available agent types
+    coordination: 'queen-led';      // Central coordination
+  };
+  
+  faultTolerance: {
+    agentFailover: boolean;        // Reassign failed tasks
+    progressCheckpoints: boolean;   // Save progress regularly
+    rollbackCapability: boolean;    // Revert on critical failures
+    selfHealing: boolean;          // Auto-fix common issues
+  };
+}
+
+const swarmConfig: SwarmOrchestration = {
+  queenAgent: {
+    role: 'master_coordinator',
+    capabilities: [
+      'task_decomposition',
+      'agent_spawning', 
+      'resource_allocation',
+      'fault_recovery'
+    ],
+    intelligenceLevel: 'opus-4.1'
+  },
+  workerAgents: {
+    spawning: 'dynamic',
+    poolSize: 'adaptive',
+    specializations: [
+      'architect', 'coder', 'tester', 'analyst',
+      'reviewer', 'documenter', 'optimizer', 'deployer'
+    ],
+    coordination: 'queen-led'
+  },
+  faultTolerance: {
+    agentFailover: true,
+    progressCheckpoints: true,
+    rollbackCapability: true,
+    selfHealing: true
+  }
+};
+```
+
+### Neural Pattern Training System
+```yaml
+neural_learning:
+  pattern_recognition:
+    - Task similarity detection
+    - Solution pattern matching
+    - Success metric correlation
+    - Failure pattern avoidance
+  
+  continuous_training:
+    - Real-time feedback loop
+    - Pattern reinforcement
+    - Adaptive optimization
+    - Knowledge consolidation
+  
+  pattern_application:
+    - Auto-suggest solutions
+    - Predict task complexity
+    - Recommend agent combinations
+    - Optimize workflow paths
+```
+
+### Enhanced Workflow Automation
+```typescript
+// Claude Flow-inspired workflow enhancements
+interface EnhancedWorkflow {
+  automaticPipelines: {
+    testDrivenDevelopment: {
+      trigger: 'code_change';
+      pipeline: ['test_write', 'code_implement', 'test_run', 'refactor'];
+      agents: ['tester', 'coder', 'reviewer'];
+    };
+    
+    continuousIntegration: {
+      trigger: 'commit_request';
+      pipeline: ['lint', 'test', 'build', 'deploy'];
+      agents: ['qa-expert', 'devops-engineer'];
+    };
+    
+    performanceOptimization: {
+      trigger: 'performance_threshold';
+      pipeline: ['profile', 'analyze', 'optimize', 'benchmark'];
+      agents: ['performance-engineer', 'database-optimizer'];
+    };
+  };
+  
+  intelligentTriggers: {
+    complexity_based: boolean;     // Trigger based on task complexity
+    pattern_based: boolean;        // Trigger based on recognized patterns
+    metric_based: boolean;         // Trigger based on performance metrics
+    schedule_based: boolean;       // Trigger on schedule
+  };
+}
+```
+
+### Advanced Commands - Claude Flow Edition
+```bash
+# Hook Management
+/hook enable [type]                  # Enable specific hook type
+/hook configure [hook] [settings]    # Configure hook parameters
+/hook test [hook]                    # Test hook execution
+
+# Memory & Context
+/memory query "pattern"              # Query SQLite memory
+/memory export [project]             # Export project memory
+/memory import [file]                # Import project memory
+/memory namespace [project]          # Switch namespace
+
+# Swarm Orchestration
+/swarm spawn [agents]                # Spawn specific agents
+/swarm status                        # View swarm status
+/swarm queen [command]               # Direct queen agent
+/swarm fault-recover                 # Trigger fault recovery
+
+# Neural Training
+/neural train [pattern]              # Train on specific pattern
+/neural analyze                      # Analyze learned patterns
+/neural predict [task]               # Predict task approach
+/neural optimize                     # Optimize neural patterns
+```
+
+### Implementation Roadmap
+```yaml
+phase_1_hooks:  # Immediate
+  - Pre-task complexity analysis
+  - Post-edit validation
+  - Session auto-save
+  timeline: "Active now"
+
+phase_2_memory:  # Short-term
+  - SQLite integration
+  - Query system
+  - Export/Import
+  timeline: "Q1 2025"
+
+phase_3_swarm:  # Medium-term
+  - Queen agent implementation
+  - Dynamic spawning
+  - Fault tolerance
+  timeline: "Q2 2025"
+
+phase_4_neural:  # Long-term
+  - Pattern recognition
+  - Continuous learning
+  - Predictive capabilities
+  timeline: "Q3 2025"
+```
+
+---
+
 ## 🙏 Acknowledgments and Sources
 
 This configuration builds upon excellent open-source work:
@@ -1115,18 +1373,19 @@ This configuration builds upon excellent open-source work:
 - **[Agents Repository](https://github.com/wshobson/agents)** - Agent definitions and patterns
 - **[Anthropic Claude Code](https://docs.anthropic.com/claude-code)** - Platform and best practices
 - **[Context7](https://context7.com)** - MCP integration for real-time documentation
+- **[Claude Flow v2.0.0](https://github.com/ruvnet/claude-flow)** - Advanced hooks, swarm intelligence, SQLite memory, and neural pattern training
 
-Our innovations: intelligent orchestration, sync system, Context7 integration, workflow automation.
+Our innovations: intelligent orchestration, sync system, Context7 integration, workflow automation, Claude Flow integration.
 
 See [CREDITS.md](~/Sites/claude-code-config/CREDITS.md) for full attributions.
 
 ---
 
-**Version**: 3.1 🤖  
-**Last Update**: 2025-08-12  
-**Features**: Opus 4.1 for Planning, Sonnet for Implementation, Two-Phase Development, Intelligent Model Selection  
-**Key Innovation**: Separazione tra planning (Opus 4.1) e implementation (Sonnet/Haiku) per ottimizzazione costi-qualità  
-**Next Revision**: Continuous AI-driven evolution  
+**Version**: 3.2 🤖  
+**Last Update**: 2025-08-13  
+**Features**: Opus 4.1 for Planning, Sonnet for Implementation, Two-Phase Development, Intelligent Model Selection, Claude Flow Integration  
+**Key Innovation**: Swarm Intelligence with Queen-Led Coordination, Advanced Hook System, SQLite Memory Persistence, Neural Pattern Training  
+**Next Revision**: Continuous AI-driven evolution with Claude Flow enhancements  
 
 ---
 *Next-generation intelligent orchestration system with Opus 4.1 planning capabilities and cost-optimized implementation strategy for enterprise-grade full-stack development*
