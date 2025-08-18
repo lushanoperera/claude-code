@@ -10,30 +10,56 @@
 
 ## Core Stack
 **Languages**: PHP 8.3, Laravel 11, TypeScript, React, WordPress, Docker  
-**MCP**: Context7 (docs), Playwright (automation)  
-**Specializations**: API, Database, DevOps, Performance
+**MCP**: Context7 (docs), Playwright (automation), Gemini-CLI (Gemini-2.5-Pro)  
+**Specializations**: API, Database, DevOps, Performance, Multi-Model Intelligence
 
-## 🎯 Two-Phase Development Strategy
+## 🎯 Three-Phase Development Strategy
 
-### Phase 1: Planning (OPUS 4.1)
+### Phase 1: Cross-Model Planning (OPUS 4.1 + GEMINI-2.5-PRO)
 ```typescript
-// Always use Opus 4.1 for planning tasks
-const planningTasks = [
-  'architecture_design',
-  'task_breakdown', 
-  'technology_selection',
-  'security_planning',
-  'orchestration_strategy'
-];
+// Multi-model planning with cross-validation
+const planningPhase = {
+  primary: 'opus-4.1',
+  validation: 'gemini-2.5-pro',  // Sempre Gemini-2.5-Pro
+  tasks: [
+    'architecture_design',
+    'task_breakdown', 
+    'technology_selection',
+    'security_planning',
+    'orchestration_strategy',
+    'cross_model_validation'
+  ],
+  workflow: 'opus_plans_gemini_validates'
+};
 ```
 
-### Phase 2: Implementation (SONNET/HAIKU)
+### Phase 2: Agent-Led Implementation (SONNET/HAIKU)
 ```typescript
-// Use cost-effective models for coding
+// Specialized agents with cost-effective models
 const implementationStrategy = {
-  simple: 'haiku-3.5',      // CRUD, basic features
-  standard: 'sonnet-4',      // APIs, integrations
-  complex: 'sonnet-4'        // Multi-agent coordination
+  simple: {
+    model: 'haiku-3.5',
+    agents: ['auto-selected']
+  },
+  standard: {
+    model: 'sonnet-4',
+    agents: ['domain-specialist', 'supporting-agent']
+  },
+  complex: {
+    model: 'sonnet-4',
+    agents: ['lead-specialist', 'team-coordination']
+  }
+};
+```
+
+### Phase 3: Cross-Model Validation
+```typescript
+// Quality assurance through model diversity
+const validationPhase = {
+  codeReview: 'gemini-2.5-pro',     // Sempre Gemini-2.5-Pro
+  securityAudit: 'claude-opus',     // Security focus
+  performanceCheck: 'gemini-2.5-pro', // Sempre Gemini-2.5-Pro
+  finalApproval: 'opus-4.1'         // Architectural coherence
 };
 ```
 
@@ -67,90 +93,175 @@ const implementationStrategy = {
 - `architect-reviewer` - System design (OPUS 4.1)
 - `senior-code-reviewer` - Code review (OPUS 4.1)
 - `workflow-orchestrator` - Task coordination
+- `multi-agent-coordinator` - Cross-agent orchestration
 
-## Workflow Templates
+### Intelligence & Analysis
+- `gemini-consultant` - Alternative AI perspective (Gemini-2.5-Pro)
+- `prompt-engineer` - Optimization specialist
+- `ai-engineer` - Model integration
+
+## Enhanced Workflow Templates
 
 ### Feature Development
 ```yaml
-planning:  # OPUS 4.1
-  agents: [architect-reviewer, workflow-orchestrator]
-  tasks: [requirements, design, breakdown]
+planning:  # OPUS 4.1 + GEMINI-2.5-PRO
+  primary: [architect-reviewer, workflow-orchestrator]
+  validation: gemini-consultant (model: gemini-2.5-pro)
+  tasks: [requirements, design, breakdown, cross_validation]
   
-implementation:  # SONNET
+agent_assignment:  # AUTO
+  orchestrator: multi-agent-coordinator
+  selection: dynamic_based_on_domain
+  
+implementation:  # SPECIALIZED AGENTS + SONNET
   backend: [laravel-specialist, php-pro]
   frontend: [react-specialist, ui-engineer]
   testing: [qa-expert, test-automator]
+  coordination: multi-agent-coordinator
   
-review:  # OPUS 4.1 (if architectural)
-  agents: [senior-code-reviewer, security-auditor]
+validation:  # MULTI-MODEL
+  code_review: gemini-consultant (model: gemini-2.5-pro)
+  security: [security-engineer, security-auditor]
+  architecture: [architect-reviewer]
+  performance: [performance-engineer]
 ```
 
 ### Performance Optimization
 ```yaml
-analysis:  # OPUS 4.1
-  agent: architect-reviewer
-  tasks: [bottleneck_identification, strategy]
+analysis:  # OPUS 4.1 + GEMINI-2.5-PRO
+  primary: architect-reviewer
+  alternative: gemini-consultant (model: gemini-2.5-pro)
+  tasks: [bottleneck_identification, strategy, cross_analysis]
   
-execution:  # SONNET/HAIKU
-  database: database-optimizer
-  backend: php-pro
-  frontend: ui-engineer
-  infrastructure: devops-engineer
+agent_coordination:  # AUTO
+  orchestrator: performance-monitor
+  specialists: [database-optimizer, performance-engineer]
+  
+execution:  # SPECIALIZED AGENTS
+  database: [database-optimizer, sql-pro]
+  backend: [php-pro, backend-developer]
+  frontend: [ui-engineer, performance-optimizer]
+  infrastructure: [devops-engineer, sre-engineer]
+  coordination: multi-agent-coordinator
 ```
 
 ## Model Selection Algorithm
 
 ```typescript
-function selectModel(task: TaskAnalysis): string {
-  // Planning always uses Opus 4.1
-  if (task.phase === 'planning' || 
-      task.phase === 'architecture' ||
-      (task.phase === 'review' && task.architecturalImpact)) {
-    return 'opus-4.1';
+interface TaskOrchestration {
+  planning: ModelStrategy;
+  implementation: AgentStrategy;
+  validation: CrossModelStrategy;
+}
+
+function orchestrateTask(task: TaskAnalysis): TaskOrchestration {
+  // Phase 1: Cross-model planning
+  const planning = {
+    primary: 'opus-4.1',
+    consultant: 'gemini-2.5-pro',  // Sempre Gemini-2.5-Pro
+    workflow: 'plan_validate_refine'
+  };
+  
+  // Phase 2: Agent-led implementation
+  const implementation = {
+    orchestrator: 'multi-agent-coordinator',
+    agents: selectSpecializedAgents(task),
+    model: selectImplementationModel(task.complexity)
+  };
+  
+  // Phase 3: Multi-model validation
+  const validation = {
+    code_review: 'gemini-2.5-pro',     // Sempre Gemini-2.5-Pro
+    security_audit: 'opus-4.1',
+    performance_check: 'gemini-2.5-pro' // Sempre Gemini-2.5-Pro
+  };
+  
+  return { planning, implementation, validation };
+}
+
+function selectSpecializedAgents(task: TaskAnalysis): string[] {
+  const agents = [];
+  
+  // Domain-specific agent selection
+  if (task.domain.includes('backend')) {
+    agents.push(task.stack.includes('laravel') ? 'laravel-specialist' : 'backend-developer');
+  }
+  if (task.domain.includes('frontend')) {
+    agents.push(task.stack.includes('react') ? 'react-specialist' : 'ui-engineer');
+  }
+  if (task.domain.includes('database')) {
+    agents.push('database-specialist', 'sql-pro');
+  }
+  if (task.domain.includes('security')) {
+    agents.push('security-engineer', 'penetration-tester');
   }
   
-  // Implementation uses cost-effective models
-  if (task.phase === 'implementation') {
-    const score = calculateComplexity(task);
-    if (score >= 6 || task.multiAgent) return 'sonnet-4';
-    if (score <= 3) return 'haiku-3.5';
-    return 'sonnet-4';
-  }
-  
-  return 'sonnet-4'; // Default
+  return agents;
 }
 ```
 
-## Auto-Orchestration Rules
+## Enhanced Auto-Orchestration Rules
 
 ```typescript
 const orchestrationRules = {
   fullStackFeature: {
     trigger: /implement.*feature|create.*system/i,
-    primary: 'fullstack-developer',
-    supporting: ['laravel-specialist', 'ui-engineer'],
-    model: 'sonnet'
+    planning: { model: 'opus-4.1', consultant: 'gemini-2.5-pro' },
+    orchestrator: 'multi-agent-coordinator',
+    agents: {
+      primary: 'fullstack-developer',
+      supporting: ['laravel-specialist', 'ui-engineer', 'qa-expert']
+    },
+    implementation: 'sonnet-4',
+    validation: 'gemini-2.5-pro'
   },
   
   performanceOptimization: {
     trigger: /optimize|slow|performance/i,
-    primary: 'performance-engineer',
-    supporting: ['database-specialist', 'php-pro'],
-    model: 'sonnet'
+    planning: { model: 'opus-4.1', consultant: 'gemini-2.5-pro' },
+    orchestrator: 'performance-monitor',
+    agents: {
+      primary: 'performance-engineer',
+      supporting: ['database-optimizer', 'php-pro', 'sre-engineer']
+    },
+    implementation: 'sonnet-4',
+    validation: 'gemini-2.5-pro'
   },
   
   deployment: {
     trigger: /deploy|docker|kubernetes/i,
-    primary: 'docker-specialist',
-    supporting: ['devops-engineer'],
-    model: 'sonnet'
+    planning: { model: 'opus-4.1', consultant: 'gemini-2.5-pro' },
+    orchestrator: 'deployment-engineer',
+    agents: {
+      primary: 'docker-specialist',
+      supporting: ['devops-engineer', 'kubernetes-specialist']
+    },
+    implementation: 'sonnet-4',
+    validation: 'gemini-2.5-pro'
   },
   
   security: {
     trigger: /security|vulnerability|audit/i,
-    primary: 'security-engineer',
-    supporting: ['security-auditor'],
-    model: 'sonnet'
+    planning: { model: 'opus-4.1', consultant: 'gemini-2.5-pro' },
+    orchestrator: 'security-auditor',
+    agents: {
+      primary: 'security-engineer',
+      supporting: ['penetration-tester', 'compliance-auditor']
+    },
+    implementation: 'sonnet-4',
+    validation: 'opus-4.1'  // Security requires highest validation
+  },
+  
+  aiIntegration: {
+    trigger: /ai|ml|llm|model|prompt/i,
+    planning: { model: 'opus-4.1', consultant: 'gemini-2.5-pro' },
+    orchestrator: 'ai-engineer',
+    agents: {
+      primary: 'llm-architect',
+      supporting: ['prompt-engineer', 'ml-engineer']
+    },
+    implementation: 'sonnet-4',
+    validation: 'gemini-2.5-pro'
   }
 };
 ```
@@ -181,23 +292,31 @@ builders: [bricks, elementor, divi]
 features: [gutenberg, headless, graphql]
 ```
 
-## Quick Commands
+## Enhanced Quick Commands
 
-### Agents
+### Multi-Model Operations
+- `/plan [task]` - Cross-model planning (OPUS + GEMINI-2.5-PRO)
+- `/validate [code]` - Multi-model validation (GEMINI-2.5-PRO)
+- `/consult gemini [question]` - Direct Gemini-2.5-Pro consultation
+- `/compare models [task]` - Model perspective comparison
+
+### Agent Orchestration
 - `/agent laravel` - Laravel specialist
 - `/agent fullstack` - Full stack developer
-- `/orchestrate complex` - Multi-agent coordination
+- `/orchestrate [domain]` - Domain-specific coordination
+- `/swarm [complex_task]` - Multi-agent swarm
 
-### Templates
-- `/template feature` - Feature development
+### Workflow Templates
+- `/template feature` - Full feature development
 - `/template optimize` - Performance optimization
 - `/template security` - Security audit
+- `/template ai` - AI integration workflow
 
-### Advanced
-- `/analyze deep` - AI analysis (OPUS 4.1)
-- `/review architecture` - Architecture review (OPUS 4.1)
+### Advanced Intelligence
+- `/analyze deep` - Multi-model analysis (GEMINI-2.5-PRO)
+- `/review architecture` - Cross-validated review
+- `/brainstorm [topic]` - Creative ideation (GEMINI-2.5-PRO)
 - `/context persist` - Save session context
-- `/workflow optimize` - Optimize workflow
 
 ## Context Protocol
 
@@ -222,44 +341,79 @@ features: [gutenberg, headless, graphql]
 }
 ```
 
-## 🧠 Claude Flow Integration
+## 🧠 Multi-Model Intelligence Integration
 
-### Hook System
+### Enhanced Hook System
 ```typescript
-interface Hooks {
+interface EnhancedHooks {
   preTask: {
     taskAnalysis: true,
-    agentAssignment: true,
+    crossModelConsultation: true,  // Gemini-2.5-Pro
+    agentSelection: true,
     contextLoading: true
   },
+  duringExecution: {
+    agentCoordination: true,
+    progressTracking: true,
+    qualityGates: true
+  },
   postEdit: {
+    crossModelValidation: true,     // Gemini-2.5-Pro
     codeFormatting: true,
     syntaxValidation: true,
-    testExecution: true
+    testExecution: true,
+    securityScan: true
   },
   session: {
     autoSave: true,
-    memoryPersistence: true
+    memoryPersistence: true,
+    learningCapture: true
   }
 }
 ```
 
-### Swarm Intelligence
+### Gemini Integration
+```typescript
+interface GeminiIntegration {
+  defaultModel: 'gemini-2.5-pro',  // Modello predefinito
+  consultation: {
+    planning_validation: true,
+    alternative_perspectives: true,
+    creative_brainstorming: true,
+    code_review: true
+  },
+  workflows: {
+    plan_validate: 'opus_plans_gemini_validates',
+    review_cross: 'gemini_reviews_claude_code',
+    brainstorm: 'multi_model_ideation'
+  }
+}
+```
+
+### Enhanced Swarm Intelligence
 ```yaml
 queen:
   model: opus-4.1
   role: master_coordinator
-  capabilities: [decomposition, spawning, allocation]
+  capabilities: [decomposition, spawning, allocation, cross_model_validation]
+  consultant: gemini-2.5-pro  # Modello fisso
 
 workers:
   spawning: dynamic
-  coordination: queen-led
-  specializations: [architect, coder, tester, reviewer]
+  coordination: multi-agent-coordinator
+  specializations: [architect, coder, tester, reviewer, security, performance]
+  models: [sonnet-4, haiku-3.5]
+  
+intelligence_network:
+  cross_validation: gemini-2.5-pro
+  perspective_diversity: true
+  adaptive_learning: true
   
 fault_tolerance:
   failover: true
   checkpoints: true
   self_healing: true
+  model_redundancy: true
 ```
 
 ### Memory System
@@ -273,44 +427,122 @@ features:
   - Project namespacing
 ```
 
-## Key Principles
+## Enhanced Key Principles
 
-1. **Planning First**: Use OPUS 4.1 for all planning and architecture
-2. **Cost-Effective Implementation**: Use SONNET/HAIKU for coding
-3. **Multi-Agent Coordination**: Parallel execution when possible
-4. **Context Persistence**: Maintain project context across sessions
-5. **Continuous Learning**: Track patterns and optimize workflows
-6. **Security First**: Always consider security implications
-7. **Performance Focus**: Optimize for speed and efficiency
+1. **Cross-Model Planning**: OPUS 4.1 + GEMINI-2.5-PRO for comprehensive analysis
+2. **Agent-Led Implementation**: Specialized agents with optimal models
+3. **Multi-Model Validation**: GEMINI-2.5-PRO for quality assurance
+4. **Intelligent Orchestration**: Dynamic agent selection and coordination
+5. **Context Persistence**: Cross-session memory with learning capture
+6. **Continuous Evolution**: Pattern recognition and workflow optimization
+7. **Security by Design**: Multi-layered security validation
+8. **Performance Excellence**: Speed + quality through specialization
+9. **Creative Intelligence**: Leverage GEMINI-2.5-PRO for innovation
+10. **Adaptive Learning**: System improves through experience
 
-## Examples
+## Enhanced Workflow Examples
 
-### Planning Request (OPUS 4.1)
+### Cross-Model Planning
 ```
 User: "How should I architect a microservices system?"
-→ Model: OPUS 4.1
-→ Agents: [architect-reviewer, workflow-orchestrator]
-→ Phase: planning
+→ Phase 1 - Planning:
+   Primary: OPUS 4.1 [architect-reviewer]
+   Validation: GEMINI-2.5-PRO [gemini-consultant]
+   Output: Cross-validated architecture plan
+→ Phase 2 - Agent Assignment:
+   Orchestrator: [multi-agent-coordinator]
+   Agents: [kubernetes-specialist, api-designer, security-engineer]
+→ Phase 3 - Implementation:
+   Models: SONNET 4 (complex), HAIKU 3.5 (simple)
+   Coordination: Real-time agent collaboration
 ```
 
-### Implementation Request (SONNET)
+### Agent-Led Implementation
 ```
-User: "Implement JWT authentication"
-→ Model: SONNET
-→ Agents: [laravel-specialist, security-engineer]
-→ Phase: implementation
+User: "Implement JWT authentication with rate limiting"
+→ Agent Selection: [laravel-specialist, security-engineer]
+→ Model: SONNET 4
+→ Orchestrator: [multi-agent-coordinator]
+→ Validation: GEMINI-2.5-PRO (code review)
+→ Security Check: OPUS 4.1 (final approval)
 ```
 
-### Review Request (OPUS 4.1)
+### Multi-Model Analysis
 ```
-User: "Review our API architecture"
-→ Model: OPUS 4.1
-→ Agents: [architect-reviewer, senior-code-reviewer]
-→ Phase: review
+User: "Optimize our database performance"
+→ Analysis Phase:
+   OPUS 4.1: Strategic bottleneck identification
+   GEMINI-2.5-PRO: Alternative optimization approaches
+→ Implementation:
+   Agents: [database-optimizer, sql-pro, performance-engineer]
+   Model: SONNET 4
+→ Validation:
+   GEMINI-2.5-PRO: Performance benchmarking
+   OPUS 4.1: Architecture impact assessment
 ```
 
 ---
 
-**Version**: 3.2 Compact | **Updated**: 2025-08-13  
-**Features**: Two-Phase Development, Intelligent Orchestration, Claude Flow Integration  
-**Size**: Optimized under 40k characters
+---
+
+## 🤖 Gemini-2.5-Pro Consultation Protocol
+
+### When to Consult Gemini-2.5-Pro
+```typescript
+const geminiConsultationTriggers = {
+  planning_validation: 'Always after OPUS planning',
+  alternative_perspective: 'When stuck or need creativity', 
+  code_review: 'Before final implementation',
+  brainstorming: 'For innovative solutions',
+  performance_analysis: 'Speed-focused optimizations',
+  cross_validation: 'Quality assurance gates'
+};
+```
+
+### Gemini Integration Workflows
+```yaml
+plan_validate:
+  1. OPUS creates initial plan
+  2. GEMINI-2.5-PRO validates and suggests improvements
+  3. OPUS refines based on feedback
+  4. Proceed to agent implementation
+
+code_review:
+  1. Agents implement features
+  2. GEMINI-2.5-PRO reviews for optimization
+  3. OPUS validates architecture coherence
+  4. Final approval and deployment
+
+brainstorm:
+  1. GEMINI-2.5-PRO generates creative alternatives
+  2. OPUS evaluates feasibility
+  3. Combined approach selection
+  4. Agent-led implementation
+```
+
+### Gemini MCP Tools Integration
+```typescript
+const geminiMCPConfig = {
+  'ask-gemini': {
+    model: 'gemini-2.5-pro',  // Modello fisso
+    changeMode: true,          // Get structured edits
+    sandbox: false             // Production ready
+  },
+  'brainstorm': {
+    model: 'gemini-2.5-pro',  // Modello fisso
+    methodology: 'auto',
+    domain: 'context-aware',
+    includeAnalysis: true
+  },
+  'fetch-chunk': {
+    // Handle large responses from Gemini-2.5-Pro
+    streaming: true
+  }
+};
+```
+
+---
+
+**Version**: 4.0 Multi-Model | **Updated**: 2025-08-18  
+**Features**: Cross-Model Intelligence, Enhanced Agent Orchestration, Gemini-2.5-Pro Integration  
+**Capabilities**: OPUS + GEMINI Planning, Specialized Agent Implementation, Multi-Model Validation
