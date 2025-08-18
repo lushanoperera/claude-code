@@ -1,4 +1,4 @@
-# Claude Code Configuration - Credits Update
+# Claude Code Configuration - Multi-Model Intelligence
 
 ## 🙏 Acknowledgments and Sources
 
@@ -12,6 +12,11 @@ This configuration builds upon excellent open-source work:
 
 ### MCP Integrations
 - **[Context7](https://context7.com)** - MCP integration for real-time documentation
+- **[Gemini-CLI MCP](https://github.com/gemini-cli/mcp-tools)** - Cross-model intelligence with Gemini-2.5-Pro
+  - Alternative AI perspective for validation and creativity
+  - Multi-model brainstorming and ideation
+  - Cross-validated planning and code review
+  - Performance analysis and optimization insights
 - **[Playwright MCP](https://github.com/microsoft/playwright-mcp)** - Browser automation and E2E testing via MCP
   - Enables natural language browser control
   - Accessibility tree-based testing (no screenshots needed)
@@ -26,12 +31,13 @@ This configuration builds upon excellent open-source work:
   - Mobile and responsive testing support
 
 ### Our Innovations
-- Intelligent orchestration with Opus 4.1 planning
-- Automated sync system for configuration management
-- Context7 and Playwright MCP seamless integration
-- Workflow automation templates
-- Two-phase development approach (Planning with Opus, Implementation with Sonnet)
-- Cost-optimized model selection strategy
+- **Cross-Model Intelligence**: OPUS 4.1 + GEMINI-2.5-PRO planning validation
+- **Enhanced Agent Orchestration**: Dynamic specialist selection and coordination
+- **Three-Phase Development**: Planning → Implementation → Validation
+- **Multi-Model Validation**: Quality assurance through model diversity
+- **Automated Agent Selection**: Smart assignment based on domain expertise
+- **Context7, Gemini-CLI, and Playwright MCP** seamless integration
+- **Cost-Optimized Strategy**: Right model for the right task
 
 ## 📚 Documentation
 
@@ -50,15 +56,32 @@ This configuration builds upon excellent open-source work:
 
 ## 💡 Key Features
 
-- **100+ Specialized Agents**: Comprehensive coverage for all development tasks
-- **Intelligent Model Selection**: Opus for planning, Sonnet for implementation
+### 🤖 Multi-Model Intelligence
+- **Cross-Model Planning**: OPUS 4.1 creates plans, GEMINI-2.5-PRO validates
+- **Alternative Perspectives**: Gemini consultation for creative solutions
+- **Multi-Model Validation**: Code review and optimization through model diversity
+- **Intelligent Brainstorming**: Combined AI creativity for complex challenges
+
+### 🎯 Enhanced Agent Orchestration
+- **100+ Specialized Agents**: Domain experts for every development task
+- **Dynamic Selection**: Automatic agent assignment based on task analysis
+- **Multi-Agent Coordination**: Parallel execution with real-time collaboration
+- **Three-Phase Strategy**: Planning → Agent Implementation → Cross-Validation
+
+### 🔧 Advanced Integrations
 - **Browser Automation**: Natural language testing with Playwright MCP
 - **Real-time Documentation**: Always up-to-date with Context7
-- **Automated Workflows**: Pre-built templates for common tasks
-- **Cross-Platform Testing**: Multi-browser and mobile support
+- **Cross-Model Consultation**: Gemini-2.5-Pro for alternative insights
+- **Automated Workflows**: Pre-built templates for complex multi-step tasks
 
 ## 🔄 Version History
 
+- **v4.0** (2025-08-18): **Multi-Model Intelligence** - Gemini-2.5-Pro integration and enhanced orchestration
+  - ✨ Cross-model planning validation (OPUS + GEMINI)
+  - 🎯 Enhanced agent orchestration with dynamic selection
+  - 🤖 Three-phase development strategy
+  - 🔗 Gemini-CLI MCP integration for alternative AI perspectives
+  - 🚀 Multi-model validation and quality assurance
 - **v3.2** (2025-08-13): Added Playwright MCP integration for browser automation
 - **v3.1** (2025-08-12): Opus 4.1 planning with cost-optimized implementation
 - **v3.0** (2025-08-11): Two-phase development approach
@@ -77,4 +100,4 @@ Contributions are welcome! Please submit issues and pull requests to help improv
 
 **Maintained by**: Claude Code Community
 **Repository**: [claude-code-config](https://github.com/lushanoperera/claude-code.git)
-**Last Updated**: 2025-08-13
+**Last Updated**: 2025-08-18
