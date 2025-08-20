@@ -1,50 +1,53 @@
-# Environment variables
-.env
-.env.local
-.env.*.local
-
-# Private configurations
-*.private
-*.secret
+# Claude Code - Files to ignore
 
 # System files
 .DS_Store
-Thumbs.db
-
-# IDE files
-.idea/
-.vscode/
 *.swp
 *.swo
-
-# Logs
-*.log
-logs/
+*~
+.idea/
+.vscode/
 
 # Temporary files
 *.tmp
-temp/
-tmp/
+*.bak
+*.log
+debug_*
+temp_*
+test_output_*
+coverage_*
 
-# Node modules (if any)
+# Session files
+projects/**/*.jsonl
+shell-snapshots/
+statsig/
+settings.local.json
+
+# Sensitive data
+.env
+.env.local
+*.pem
+*.key
+
+# Cache & build
 node_modules/
+dist/
+build/
+.cache/
 
-# Python
-__pycache__/
-*.py[cod]
-*$py.class
-.Python
-venv/
-env/
+# Memory system (contains personal data)
+memory/
+memory-bank/
+knowledge-graph/
 
 # Backup files
 *.bak
-*.backup
+*_backup*
 
-# Claude Code private data
-todos/
-*.todo.json
+# IDE
+.idea/
+.vscode/
+*.sublime-*
 
-# Personal data
-personal/
-private/
+# OS
+Thumbs.db

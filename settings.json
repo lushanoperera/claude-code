@@ -1,7 +1,135 @@
 {
   "$schema": "https://json.schemastore.org/claude-code-settings.json",
+  "model": "claude-opus-4-1-20250805",
+  "modelStrategy": {
+    "planning": {
+      "primary": "claude-opus-4-1-20250805",
+      "consultant": "gemini-2.5-pro",
+      "workflow": "opus_plans_gemini_validates"
+    },
+    "implementation": {
+      "simple": "claude-3-5-haiku-20241022",
+      "standard": "claude-3-5-sonnet-20241022",
+      "complex": "claude-3-5-sonnet-20241022"
+    },
+    "validation": {
+      "codeReview": "gemini-2.5-pro",
+      "securityAudit": "claude-opus-4-1-20250805",
+      "performanceCheck": "gemini-2.5-pro"
+    }
+  },
+  "agentRegistry": {
+    "loadOnInit": true,
+    "sourcePath": "~/.claude/agents",
+    "autoSelection": true,
+    "domainMapping": true
+  },
+  "sessionManagement": {
+    "checkTodos": true,
+    "loadAgentRegistry": true,
+    "validateMcpTools": true,
+    "cleanupTempFiles": true,
+    "contextRestore": true,
+    "timeout": 1800,
+    "maxHistory": 1000,
+    "autoSave": true
+  },
+  "memorySystem": {
+    "multiLayered": true,
+    "workingMemoryPath": "~/.claude/memory/working.json",
+    "longTermMemoryPath": "~/.claude/memory/longterm.json",
+    "knowledgeGraphPath": "~/.claude/knowledge-graph",
+    "memoryBankRoot": "~/.claude/memory-bank",
+    "contextPersistence": true,
+    "crossSessionMemory": true
+  },
+  "cleanupAutomation": {
+    "enabled": true,
+    "tempFileTracking": true,
+    "autoCleanupRules": {
+      "debugFiles": "task_completion",
+      "tempOutputs": "task_completion",
+      "configBackups": "preserve_on_success",
+      "testArtifacts": "validation_complete"
+    },
+    "preservationRules": {
+      "documentation": "always_preserve",
+      "configurations": "preserve_on_success",
+      "sourceCode": "always_preserve",
+      "deliverables": "always_preserve"
+    }
+  },
+  "mcp": {
+    "servers": {
+      "gemini-mcp": {
+        "command": "npx",
+        "args": ["-y", "gemini-mcp-tool"],
+        "env": {
+          "GEMINI_API_KEY": "${GEMINI_API_KEY}"
+        },
+        "role": "semantic_validator_consultant",
+        "capabilities": ["ask-gemini", "brainstorm", "fetch-chunk"]
+      },
+      "playwright-mcp": {
+        "command": "npx",
+        "args": ["@playwright/mcp@latest"],
+        "role": "test_automation_browser",
+        "capabilities": ["browser_navigate", "browser_click", "browser_snapshot", "browser_evaluate"]
+      },
+      "context7-mcp": {
+        "transport": "sse",
+        "endpoint": "https://mcp.context7.com/sse",
+        "role": "external_context_orchestration",
+        "capabilities": ["resolve-library-id", "get-library-docs"]
+      },
+      "memory-bank-mcp": {
+        "command": "npx",
+        "args": ["-y", "@allpepper/memory-bank-mcp"],
+        "env": {
+          "MEMORY_BANK_ROOT": "~/.claude/memory-bank"
+        },
+        "role": "project_memory_persistence",
+        "capabilities": ["store-context", "retrieve-context", "project-notes"]
+      },
+      "knowledge-graph-mcp": {
+        "command": "npx",
+        "args": ["-y", "mcp-knowledge-graph"],
+        "env": {
+          "GRAPH_STORAGE_PATH": "~/.claude/knowledge-graph"
+        },
+        "role": "structured_knowledge_base",
+        "capabilities": ["store-facts", "query-relationships", "global-preferences"]
+      },
+      "notion-mcp": {
+        "command": "npx",
+        "args": ["-y", "@notionhq/notion-mcp"],
+        "env": {
+          "NOTION_API_KEY": "${NOTION_API_KEY}"
+        },
+        "role": "document_collaboration",
+        "capabilities": ["create-page", "update-page", "query-database"]
+      },
+      "asana-mcp": {
+        "command": "npx",
+        "args": ["-y", "asana-mcp"],
+        "env": {
+          "ASANA_ACCESS_TOKEN": "${ASANA_ACCESS_TOKEN}"
+        },
+        "role": "task_project_management",
+        "capabilities": ["create-task", "update-task", "search-tasks", "project-management"]
+      }
+    },
+    "orchestration": {
+      "planning": ["gemini-mcp"],
+      "validation": ["gemini-mcp"],
+      "documentation": ["context7-mcp"],
+      "testing": ["playwright-mcp"],
+      "consultation": ["gemini-mcp"],
+      "memory": ["memory-bank-mcp", "knowledge-graph-mcp"],
+      "projectManagement": ["notion-mcp", "asana-mcp"]
+    }
+  },
   "feedbackSurveyState": {
     "lastShownTime": 1754052169331
-  },
-  "model": "opusplan"
+  }
 }
