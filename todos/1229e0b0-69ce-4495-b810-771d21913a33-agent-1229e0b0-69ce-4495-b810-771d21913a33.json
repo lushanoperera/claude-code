@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Aggiornare README.md con le nuove funzionalità Gemini-2.5-Pro",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Aggiungere sezione Multi-Model Intelligence",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Aggiornare versione a 4.0 Multi-Model",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Commit e push del README aggiornato",
+    "status": "completed",
+    "id": "4"
+  }
+]

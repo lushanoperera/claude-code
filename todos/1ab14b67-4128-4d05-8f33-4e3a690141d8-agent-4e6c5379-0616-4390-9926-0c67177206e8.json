@@ -1,0 +1,17 @@
+[
+  {
+    "content": "Extract SVG path elements for all 71 OMI countries from Wikipedia Equal-Earth projection SVG",
+    "status": "completed",
+    "id": "extract-omi-countries"
+  },
+  {
+    "content": "Organize extracted paths by OMI regions (Europe, Americas, Africa, Asia-Oceania, Administration General)",
+    "status": "completed",
+    "id": "organize-by-regions"
+  },
+  {
+    "content": "Identify any countries from OMI list that are missing from Wikipedia SVG",
+    "status": "in_progress",
+    "id": "identify-missing-countries"
+  }
+]

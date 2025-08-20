@@ -1,0 +1,12 @@
+[
+  {
+    "content": "Add float rules for Firefox windows from playwright MCP",
+    "status": "completed",
+    "id": "extend-firefox-rules"
+  },
+  {
+    "content": "Add float rules for Safari windows from playwright MCP",
+    "status": "completed",
+    "id": "extend-safari-rules"
+  }
+]

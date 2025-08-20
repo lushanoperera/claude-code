@@ -1,0 +1,27 @@
+[
+  {
+    "content": "Implementare Context Persistence per memoria tra sessioni",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Creare Learning System per ottimizzazione automatica",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Sviluppare Template Dinamici adattivi",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Aggiungere Monitoring & Analytics Dashboard",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Implementare Integration Hub per tools esterni",
+    "status": "completed",
+    "id": "5"
+  }
+]

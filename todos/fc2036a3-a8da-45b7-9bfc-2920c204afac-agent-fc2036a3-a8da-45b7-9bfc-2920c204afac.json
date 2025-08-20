@@ -1,0 +1,26 @@
+[
+  {
+    "content": "Analizzare la struttura attuale del codice",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Creare un array unificato per termini e post",
+    "status": "completed",
+    "priority": "high",
+    "id": "2"
+  },
+  {
+    "content": "Implementare l'ordinamento alfabetico dell'array unificato",
+    "status": "completed",
+    "priority": "high",
+    "id": "3"
+  },
+  {
+    "content": "Rimuovere il debug print_r",
+    "status": "completed",
+    "priority": "medium",
+    "id": "4"
+  }
+]

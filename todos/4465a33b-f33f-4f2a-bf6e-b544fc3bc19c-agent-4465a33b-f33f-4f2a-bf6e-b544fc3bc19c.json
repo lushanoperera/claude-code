@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Create browser-debugger agent configuration",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Add Chrome DevTools Protocol integration",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Configure Firefox debugging capabilities",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Add headless browser automation tools",
+    "status": "completed",
+    "id": "4"
+  }
+]

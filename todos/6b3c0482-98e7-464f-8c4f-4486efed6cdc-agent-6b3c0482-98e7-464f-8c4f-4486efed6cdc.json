@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Add Bonanno brand reference logic to AI descriptions",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Implement product availability and visibility checks",
+    "status": "completed",
+    "priority": "high",
+    "id": "2"
+  },
+  {
+    "content": "Update prompt building to include Bonanno references",
+    "status": "completed",
+    "priority": "high",
+    "id": "3"
+  },
+  {
+    "content": "Add multilingual Bonanno references for WPML support",
+    "status": "completed",
+    "priority": "medium",
+    "id": "4"
+  },
+  {
+    "content": "Test Bonanno reference insertion with various product statuses",
+    "status": "completed",
+    "priority": "medium",
+    "id": "5"
+  }
+]

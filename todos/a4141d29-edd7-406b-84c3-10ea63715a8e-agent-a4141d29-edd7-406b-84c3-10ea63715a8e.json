@@ -1,0 +1,37 @@
+[
+  {
+    "content": "Check and fix redirect from local HTTP to production HTTPS",
+    "status": "completed",
+    "id": "fix-redirect"
+  },
+  {
+    "content": "Verify WordPress URLs in database",
+    "status": "completed",
+    "id": "check-db-urls"
+  },
+  {
+    "content": "Check .htaccess for redirects",
+    "status": "completed",
+    "id": "check-htaccess"
+  },
+  {
+    "content": "Recreate missing docker-compose.yml file",
+    "status": "completed",
+    "id": "recreate-docker"
+  },
+  {
+    "content": "Restore missing Docker/PHP configuration files",
+    "status": "completed",
+    "id": "restore-config"
+  },
+  {
+    "content": "Start Docker containers and test",
+    "status": "completed",
+    "id": "start-docker"
+  },
+  {
+    "content": "Test final local site access",
+    "status": "completed",
+    "id": "test-local-access"
+  }
+]

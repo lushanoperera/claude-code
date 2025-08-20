@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Remove _new.scss import from style.scss",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Recompile SCSS after consolidation",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Commit and push changes to register working state",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Register SSH credentials from movefile.yml in CLAUDE.md",
+    "status": "completed",
+    "id": "7"
+  }
+]

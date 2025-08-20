@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Analizzare la configurazione attuale in CLAUDE.md",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Aggiornare la sezione Model Selection con logica plan vs implementation",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Modificare Agent Selection Matrix per distinguere planning da coding",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Aggiornare Orchestration Workflow per il nuovo paradigma",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Sincronizzare con ~/Sites/claude-code-config",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Committare e pushare su master",
+    "status": "completed",
+    "id": "6"
+  }
+]

@@ -1,0 +1,62 @@
+[
+  {
+    "content": "Fix login authentication issues",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Implement Activities page with real data",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Create Journey form page",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Build AI Chat interface",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Create Account/Profile page",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Add password reset functionality to frontend",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Fix TypeScript compilation errors",
+    "status": "completed",
+    "id": "7"
+  },
+  {
+    "content": "Fix Activities page API data structure",
+    "status": "completed",
+    "id": "8"
+  },
+  {
+    "content": "Improve mobile responsiveness and header navigation",
+    "status": "completed",
+    "id": "9"
+  },
+  {
+    "content": "Debug Activities page loading issue with Playwright",
+    "status": "completed",
+    "id": "10"
+  },
+  {
+    "content": "Fix header z-index overlap issue preventing navigation",
+    "status": "completed",
+    "id": "11"
+  },
+  {
+    "content": "Debug and fix mobile navigation overlay with Playwright",
+    "status": "completed",
+    "id": "12"
+  }
+]

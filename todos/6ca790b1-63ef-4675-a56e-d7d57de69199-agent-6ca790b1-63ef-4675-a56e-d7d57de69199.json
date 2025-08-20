@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Analyze current CLAUDE.md structure and identify essential sections",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Remove redundant code examples and verbose sections",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Consolidate agent configurations",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Simplify workflow templates",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Create optimized version under 40k characters",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Verify file size",
+    "status": "completed",
+    "id": "6"
+  }
+]

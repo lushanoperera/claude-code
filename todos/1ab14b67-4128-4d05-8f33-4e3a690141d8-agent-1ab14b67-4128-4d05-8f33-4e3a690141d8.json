@@ -1,0 +1,27 @@
+[
+  {
+    "content": "📝 Aggiornare OMI_WORLD_MAP_FINAL_REPORT.md",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "📝 Aggiornare OMI_WORLD_MAP_SESSION_PROGRESS.md",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "📝 Aggiornare OMI_WORLD_MAP_SESSION_REPORT.md",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "🧹 Pulizia file temporanei in /tmp/",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "🧹 Pulizia screenshot in .playwright-mcp/",
+    "status": "completed",
+    "id": "5"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "content": "Examine current noindex-management.php implementation",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Add add_link field check to noindex logic",
+    "status": "completed",
+    "priority": "high",
+    "id": "2"
+  },
+  {
+    "content": "Implement RankMath compatibility for sitemap exclusion",
+    "status": "completed",
+    "priority": "high",
+    "id": "3"
+  },
+  {
+    "content": "Test and verify the implementation works correctly",
+    "status": "completed",
+    "priority": "medium",
+    "id": "4"
+  }
+]

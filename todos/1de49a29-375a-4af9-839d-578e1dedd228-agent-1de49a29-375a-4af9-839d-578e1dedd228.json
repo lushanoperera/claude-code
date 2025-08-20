@@ -1,0 +1,17 @@
+[
+  {
+    "content": "Analizzare configurazione attuale git per worktrees",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Progettare schema worktrees per workflow multi-sessione",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Aggiornare CLAUDE.md con configurazione worktrees",
+    "status": "completed",
+    "id": "3"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Check SASS file structure and locate _main.scss",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Verify Gulp compilation is working and CSS output is generated",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Inspect compiled CSS to confirm new rules are included",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Check browser cache and CSS loading on local site",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Analyze HTML structure and validate CSS selectors",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Provide solutions to fix the styling issues",
+    "status": "completed",
+    "id": "6"
+  }
+]

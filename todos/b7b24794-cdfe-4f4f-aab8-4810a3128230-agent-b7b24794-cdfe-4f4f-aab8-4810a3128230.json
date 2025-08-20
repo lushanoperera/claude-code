@@ -1,0 +1,12 @@
+[
+  {
+    "content": "Test current events page layout locally",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Access local development site to verify fixes",
+    "status": "completed",
+    "id": "2"
+  }
+]

@@ -1,0 +1,26 @@
+[
+  {
+    "content": "Explore project structure and understand the WordPress setup",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Check theme files and customizations",
+    "status": "completed",
+    "priority": "medium",
+    "id": "2"
+  },
+  {
+    "content": "Review custom post types and plugins",
+    "status": "completed",
+    "priority": "medium",
+    "id": "3"
+  },
+  {
+    "content": "Examine recent changes and current state",
+    "status": "completed",
+    "priority": "low",
+    "id": "4"
+  }
+]

@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Disattivare temporaneamente omi-world-map per testare WPML",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Riattivare WPML senza omi-world-map",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Identificare il conflitto specifico tra i due plugin",
+    "status": "in_progress",
+    "id": "3"
+  },
+  {
+    "content": "Trovare una soluzione per far coesistere entrambi",
+    "status": "pending",
+    "id": "4"
+  }
+]

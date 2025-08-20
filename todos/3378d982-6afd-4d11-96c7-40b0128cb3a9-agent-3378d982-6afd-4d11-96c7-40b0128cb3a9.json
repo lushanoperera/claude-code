@@ -1,0 +1,42 @@
+[
+  {
+    "content": "Preparare i file di configurazione per il deploy Docker su Flatcar",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Modificare docker-compose.yml per produzione",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Build delle immagini Docker via SSH",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Deploy dello stack tramite Portainer",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Testare l'applicazione tramite IP locale",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Verificare configurazione Traefik esistente",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Configurare Traefik per kido.giulyart.it",
+    "status": "completed",
+    "id": "7"
+  },
+  {
+    "content": "Testare funzionamento finale con URL pubblica",
+    "status": "completed",
+    "id": "8"
+  }
+]

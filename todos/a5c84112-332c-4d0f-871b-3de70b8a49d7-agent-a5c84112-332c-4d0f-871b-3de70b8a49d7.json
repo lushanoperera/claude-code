@@ -1,0 +1,14 @@
+[
+  {
+    "content": "Cercare tutti i file che contengono la stringa 'Equipe' nel template",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Sostituire 'Equipe' con 'Équipe' in tutti i file trovati",
+    "status": "completed",
+    "priority": "high",
+    "id": "2"
+  }
+]

@@ -1,0 +1,57 @@
+[
+  {
+    "content": "Examine reference files and understand requirements",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Analyze SVG world map structure and country paths",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Create plugin directory structure and main plugin file",
+    "status": "in_progress",
+    "id": "3"
+  },
+  {
+    "content": "Design database schema for OMI country data",
+    "status": "pending",
+    "id": "4"
+  },
+  {
+    "content": "Implement admin settings page for data management",
+    "status": "pending",
+    "id": "5"
+  },
+  {
+    "content": "Create frontend map display with interactivity",
+    "status": "pending",
+    "id": "6"
+  },
+  {
+    "content": "Add responsive design and mobile optimization",
+    "status": "pending",
+    "id": "7"
+  },
+  {
+    "content": "Implement security measures and WordPress best practices",
+    "status": "pending",
+    "id": "8"
+  },
+  {
+    "content": "Add shortcode support for easy embedding",
+    "status": "pending",
+    "id": "9"
+  },
+  {
+    "content": "Test plugin functionality and optimize performance",
+    "status": "pending",
+    "id": "10"
+  },
+  {
+    "content": "Add WPML multilingual support and compatibility",
+    "status": "pending",
+    "id": "11"
+  }
+]

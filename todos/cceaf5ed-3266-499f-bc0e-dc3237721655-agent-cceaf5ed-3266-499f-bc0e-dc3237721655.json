@@ -1,0 +1,17 @@
+[
+  {
+    "content": "Rimuovere CLAUDE.md dal repository mantenendo la copia locale",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Aggiornare .gitignore per escludere CLAUDE.md",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Commit delle modifiche al .gitignore",
+    "status": "completed",
+    "id": "3"
+  }
+]

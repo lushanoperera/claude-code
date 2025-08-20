@@ -1,0 +1,27 @@
+[
+  {
+    "content": "Analizzare database dump per ordine 322360",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Documentare informazioni vitali in CLAUDE.md",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Scaricare log da produzione (WooCommerce, PayPal, StyliaFoe sf-dropshipping)",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Analizzare log per identificare causa rimborso automatico",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Report finale con conclusioni",
+    "status": "completed",
+    "id": "5"
+  }
+]

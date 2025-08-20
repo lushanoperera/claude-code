@@ -1,0 +1,47 @@
+[
+  {
+    "content": "Creare backup di settings.json e CLAUDE.md",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Analizzare settings.json corrente",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Verificare conformità con CLAUDE.md",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Aggiungere MCP mancanti (Notion, Asana)",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Implementare multi-layered memory system",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Ottimizzare configurazione agenti ~/.claude/agents",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Aggiornare model strategy (three-phase)",
+    "status": "completed",
+    "id": "7"
+  },
+  {
+    "content": "Aggiungere session management",
+    "status": "completed",
+    "id": "8"
+  },
+  {
+    "content": "Consultare Gemini per validazione",
+    "status": "completed",
+    "id": "9"
+  }
+]

@@ -1,0 +1,37 @@
+[
+  {
+    "content": "Analizzare CLAUDE.md di gioielleriabonanno.it per capire la struttura Docker",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Creare docker-compose.yml con stack LAMP, nginx, redis",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Configurare nginx come reverse proxy con fallback per uploads",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Creare Dockerfile per PHP con estensioni necessarie",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Configurare wp-config.php per ambiente Docker",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Creare script di inizializzazione database",
+    "status": "in_progress",
+    "id": "6"
+  },
+  {
+    "content": "Testare l'ambiente e documentare l'uso",
+    "status": "pending",
+    "id": "7"
+  }
+]

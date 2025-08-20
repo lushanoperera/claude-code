@@ -1,0 +1,20 @@
+[
+  {
+    "content": "Leggere e analizzare improved-scroller.js",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Identificare problemi con eventi touch/mobile",
+    "status": "completed",
+    "priority": "high",
+    "id": "2"
+  },
+  {
+    "content": "Implementare fix per supporto touch",
+    "status": "completed",
+    "priority": "high",
+    "id": "3"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Analyze current scroller implementation and identify mobile/wide screen issues",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Improve mobile touch handling and momentum physics",
+    "status": "completed",
+    "priority": "high",
+    "id": "2"
+  },
+  {
+    "content": "Add responsive breakpoints for mobile, tablet, and wide screens",
+    "status": "completed",
+    "priority": "high",
+    "id": "3"
+  },
+  {
+    "content": "Optimize performance and reduce layout thrashing",
+    "status": "completed",
+    "priority": "medium",
+    "id": "4"
+  },
+  {
+    "content": "Test improvements on the live site",
+    "status": "pending",
+    "priority": "medium",
+    "id": "5"
+  }
+]

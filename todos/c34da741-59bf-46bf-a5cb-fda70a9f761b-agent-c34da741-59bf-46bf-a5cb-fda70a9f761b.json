@@ -1,0 +1,14 @@
+[
+  {
+    "content": "Modificare wp-config.php per supportare sia ambiente locale che produzione",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Aggiornare movefile.yml con le configurazioni corrette per produzione",
+    "status": "completed",
+    "priority": "high",
+    "id": "2"
+  }
+]

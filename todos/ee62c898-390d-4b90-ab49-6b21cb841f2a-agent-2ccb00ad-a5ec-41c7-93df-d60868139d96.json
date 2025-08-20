@@ -1,0 +1,57 @@
+[
+  {
+    "content": "Read and analyze complete structure of _main.scss file",
+    "status": "completed",
+    "id": "analyze-main"
+  },
+  {
+    "content": "Identify logical sections in current _main.scss for refactoring",
+    "status": "completed",
+    "id": "identify-sections"
+  },
+  {
+    "content": "Create new organized structure with clear section headers",
+    "status": "completed",
+    "id": "create-structure"
+  },
+  {
+    "content": "Merge homepage template styles from _new.scss into appropriate sections",
+    "status": "completed",
+    "id": "merge-homepage"
+  },
+  {
+    "content": "Merge news carousel and grid link styles from _new.scss",
+    "status": "completed",
+    "id": "merge-components"
+  },
+  {
+    "content": "Merge popup modal styles from _new.scss",
+    "status": "completed",
+    "id": "merge-modals"
+  },
+  {
+    "content": "Add remaining sections from original _main.scss (grid, listing, forms, etc.)",
+    "status": "completed",
+    "id": "add-remaining"
+  },
+  {
+    "content": "Check for and remove any duplicate styles between files",
+    "status": "completed",
+    "id": "remove-duplicates"
+  },
+  {
+    "content": "Verify merged file compiles correctly",
+    "status": "completed",
+    "id": "test-compile"
+  },
+  {
+    "content": "Replace original _main.scss with reorganized version",
+    "status": "completed",
+    "id": "replace-main"
+  },
+  {
+    "content": "Delete _new.scss file after successful merge",
+    "status": "completed",
+    "id": "cleanup-new"
+  }
+]

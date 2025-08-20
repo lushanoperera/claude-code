@@ -1,0 +1,26 @@
+[
+  {
+    "content": "Analyze current AI plugin structure and prompt system",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Modify prompt templates to limit to 55 words max",
+    "status": "completed",
+    "priority": "high",
+    "id": "2"
+  },
+  {
+    "content": "Update style to elegant technical tone for collectors",
+    "status": "completed",
+    "priority": "high",
+    "id": "3"
+  },
+  {
+    "content": "Test with sample watch data to verify word count",
+    "status": "completed",
+    "priority": "medium",
+    "id": "4"
+  }
+]

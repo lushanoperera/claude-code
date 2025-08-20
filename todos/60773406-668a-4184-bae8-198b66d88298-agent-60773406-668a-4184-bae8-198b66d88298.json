@@ -1,0 +1,20 @@
+[
+  {
+    "content": "Correggere l'errore SQL per la colonna guid",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Aggiornare CLAUDE.md con le nuove configurazioni Docker",
+    "status": "completed",
+    "priority": "medium",
+    "id": "2"
+  },
+  {
+    "content": "Rimuovere le vecchie cartelle Docker dalla root",
+    "status": "completed",
+    "priority": "low",
+    "id": "3"
+  }
+]

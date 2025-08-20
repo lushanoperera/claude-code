@@ -1,0 +1,27 @@
+[
+  {
+    "content": "Analizzare la configurazione MCP attuale di Claude Code",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Creare file di configurazione per Playwright MCP",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Integrare Playwright MCP nel workflow esistente",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Documentare use cases e comandi per il workflow quotidiano",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Testare l'integrazione con esempi pratici",
+    "status": "completed",
+    "id": "5"
+  }
+]

@@ -1,0 +1,17 @@
+[
+  {
+    "content": "Rimuovere file temporanei di debug",
+    "status": "completed",
+    "id": "21"
+  },
+  {
+    "content": "Escludere directory .tmb dal repository",
+    "status": "completed",
+    "id": "22"
+  },
+  {
+    "content": "Committare pulizia repository",
+    "status": "completed",
+    "id": "23"
+  }
+]

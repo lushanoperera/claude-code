@@ -1,0 +1,37 @@
+[
+  {
+    "content": "Explore repository structure and identify key files",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Check for existing CLAUDE.md file",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Read README.md and other documentation files",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Examine package.json, composer.json or similar configuration files",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Analyze WordPress theme/plugin structure",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Check for build tools and development commands",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Create or update CLAUDE.md file",
+    "status": "completed",
+    "id": "7"
+  }
+]

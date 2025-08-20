@@ -1,0 +1,22 @@
+[
+  {
+    "content": "Leggere il file .gitignore esistente",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Aggiungere regole per escludere file .log",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Aggiungere regole per escludere file .gz",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Aggiungere regole per directory di log specifiche",
+    "status": "completed",
+    "id": "4"
+  }
+]

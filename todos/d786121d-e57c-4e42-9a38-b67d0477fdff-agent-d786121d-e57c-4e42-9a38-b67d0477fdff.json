@@ -1,0 +1,57 @@
+[
+  {
+    "content": "Analizzare l'architettura esistente per capire dove implementare il backoffice",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Progettare la struttura del backoffice admin con autenticazione",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Implementare route backend per funzioni amministrative",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Creare interfaccia React per gestione utenti",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Creare interfaccia React per gestione attività (CRUD)",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Implementare dashboard con statistiche e metriche",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Aggiungere sistema di ruoli admin al database",
+    "status": "completed",
+    "id": "7"
+  },
+  {
+    "content": "Bug Fix: Utente si slogga quando modifica profilo e viene reindirizzato al login",
+    "status": "completed",
+    "id": "8"
+  },
+  {
+    "content": "Aggiungere route admin all'App.tsx e sistemare routing",
+    "status": "completed",
+    "id": "9"
+  },
+  {
+    "content": "Creare utente admin di test per testare il backoffice",
+    "status": "completed",
+    "id": "10"
+  },
+  {
+    "content": "Fix: Problema modulo missing nel backend - risolto con backoffice funzionante",
+    "status": "completed",
+    "id": "11"
+  }
+]

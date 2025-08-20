@@ -1,0 +1,17 @@
+[
+  {
+    "content": "Analizzare le tabelle Action Scheduler nel database",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Creare script SQL per pulizia sicura dei dati vecchi",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Verificare configurazioni di retention automatica",
+    "status": "completed",
+    "id": "3"
+  }
+]

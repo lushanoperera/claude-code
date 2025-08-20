@@ -1,0 +1,62 @@
+[
+  {
+    "content": "Set up project structure and Docker configuration",
+    "status": "in_progress",
+    "id": "1"
+  },
+  {
+    "content": "Create backend API with Node.js/Express",
+    "status": "pending",
+    "id": "2"
+  },
+  {
+    "content": "Set up PostgreSQL database with user and activity schemas",
+    "status": "pending",
+    "id": "3"
+  },
+  {
+    "content": "Implement authentication and user registration",
+    "status": "pending",
+    "id": "4"
+  },
+  {
+    "content": "Create React frontend with landing page",
+    "status": "pending",
+    "id": "5"
+  },
+  {
+    "content": "Build registration and login forms",
+    "status": "pending",
+    "id": "6"
+  },
+  {
+    "content": "Create activity selection modes (conversational/classic)",
+    "status": "pending",
+    "id": "7"
+  },
+  {
+    "content": "Build activity cards and detail views",
+    "status": "pending",
+    "id": "8"
+  },
+  {
+    "content": "Implement user account page",
+    "status": "pending",
+    "id": "9"
+  },
+  {
+    "content": "Add AI integration for activity generation",
+    "status": "pending",
+    "id": "10"
+  },
+  {
+    "content": "Create seed data for initial activities",
+    "status": "pending",
+    "id": "11"
+  },
+  {
+    "content": "Test and finalize Docker deployment",
+    "status": "pending",
+    "id": "12"
+  }
+]

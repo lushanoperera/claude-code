@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Analyze current CLAUDE.md configuration in ~/Sites/.claude",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Review and integrate advanced orchestration features",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Enhance agent selection matrix for full-stack development",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Add dynamic model selection algorithm",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Implement context management and learning system",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Add Claude Code 2025 specific enhancements",
+    "status": "completed",
+    "id": "6"
+  }
+]

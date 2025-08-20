@@ -1,0 +1,32 @@
+[
+  {
+    "content": "Check WordPress site accessibility and current status",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Verify HTTP_HOST fix resolves undefined warning",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Test security headers implementation",
+    "status": "in_progress",
+    "id": "3"
+  },
+  {
+    "content": "Verify theme loads without PHP errors",
+    "status": "pending",
+    "id": "4"
+  },
+  {
+    "content": "Test password change security improvements",
+    "status": "pending",
+    "id": "5"
+  },
+  {
+    "content": "Verify jQuery update to 3.6.4",
+    "status": "completed",
+    "id": "6"
+  }
+]

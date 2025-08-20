@@ -1,0 +1,38 @@
+[
+  {
+    "content": "Analizzare dump database di produzione per verificare struttura dati reale",
+    "status": "completed",
+    "priority": "high",
+    "id": "1"
+  },
+  {
+    "content": "Confrontare campi ACF JSON con quelli utilizzati nel plugin",
+    "status": "completed",
+    "priority": "high",
+    "id": "2"
+  },
+  {
+    "content": "Verificare tassonomie e categorie prodotto nel database",
+    "status": "completed",
+    "priority": "high",
+    "id": "3"
+  },
+  {
+    "content": "Controllare meta fields effettivamente presenti sui prodotti",
+    "status": "completed",
+    "priority": "medium",
+    "id": "4"
+  },
+  {
+    "content": "Correggere eventuali discrepanze tra codebase e dati reali",
+    "status": "completed",
+    "priority": "high",
+    "id": "5"
+  },
+  {
+    "content": "Implementare supporto multilingua WPML per sostituire WeGlot",
+    "status": "completed",
+    "priority": "medium",
+    "id": "6"
+  }
+]

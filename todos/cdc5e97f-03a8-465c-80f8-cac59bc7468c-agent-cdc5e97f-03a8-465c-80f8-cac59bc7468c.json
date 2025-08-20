@@ -1,0 +1,37 @@
+[
+  {
+    "content": "Leggere il CLAUDE.md attuale per comprendere la struttura esistente",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Analizzare gli agenti disponibili in ~/.claude/agents",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Verificare gli strumenti MCP e settings.json",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Aggiornare CLAUDE.md con valutazione automatica agenti",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Aggiungere gestione file temporanei e cleanup",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Implementare sistema TODO.md automatico",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Aggiungere controllo TODO.md ad inizio sessione",
+    "status": "completed",
+    "id": "7"
+  }
+]

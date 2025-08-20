@@ -1,0 +1,37 @@
+[
+  {
+    "content": "Leggere il file CLAUDE.md attuale",
+    "status": "completed",
+    "id": "1"
+  },
+  {
+    "content": "Integrare Hook System avanzato",
+    "status": "completed",
+    "id": "2"
+  },
+  {
+    "content": "Aggiungere Memory System con SQLite",
+    "status": "completed",
+    "id": "3"
+  },
+  {
+    "content": "Implementare Swarm Orchestration",
+    "status": "completed",
+    "id": "4"
+  },
+  {
+    "content": "Aggiungere Neural Learning patterns",
+    "status": "completed",
+    "id": "5"
+  },
+  {
+    "content": "Documentare le fonti e credits",
+    "status": "completed",
+    "id": "6"
+  },
+  {
+    "content": "Committare e pushare le modifiche",
+    "status": "completed",
+    "id": "7"
+  }
+]
