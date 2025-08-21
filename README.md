@@ -68,24 +68,55 @@ This configuration builds upon excellent open-source work:
 
 ## 📚 Documentation
 
-- [Setup Guide](SETUP-GUIDE.md) - Complete setup instructions
-- [Playwright Setup](mcp-playwright-setup.md) - Playwright MCP integration guide
-- [Daily Commands](playwright-daily-commands.md) - Quick reference for testing
-- [Testing Workflows](workflows/playwright-testing.md) - Complete testing templates
+### Core Documentation
+- [Complete MCP Setup](MCP-COMPLETE-SETUP.md) - All 7 MCP servers configuration
+- [Setup Guide](SETUP-GUIDE.md) - Complete setup and sync instructions
+- [CLAUDE.md](CLAUDE.md) - Main configuration file (auto-loaded)
+
+### Testing Documentation
+- [Playwright Setup](mcp-playwright-setup.md) - Playwright MCP integration
+- [Daily Commands](playwright-daily-commands.md) - Quick testing commands
+- [Testing Workflows](workflows/playwright-testing.md) - E2E testing templates
+
+### Agent Documentation
+- [Agent Registry](agents/) - All 19 specialized agents
+- [Agent Coordination Matrix](agent_coordination_matrix.md) - Agent collaboration patterns
 
 ## 🚀 Quick Start
 
-1. **Install Claude Code**: Follow official documentation
-2. **Setup MCP Servers**: Configure all MCP integrations
-   - Core: Gemini-CLI, Context7 (SSE transport)
-   - Testing: Playwright MCP
-   - Memory: Memory Bank, Knowledge Graph
-   - Project Management: Asana, Notion
-3. **Run Setup Script**: `~/.claude/setup-sync.sh`
-4. **Install MCPs**: `~/.claude/install_mcps.sh`
-5. **Verify Integration**: Test with natural language commands
+### Prerequisites
+- Claude Code installed
+- Node.js 18+ for MCP servers
+- Git for version control
+
+### Installation
+```bash
+# 1. Clone repository
+git clone https://github.com/lushanoperera/claude-code.git ~/Sites/claude-code-config
+
+# 2. Setup sync between repo and ~/.claude
+cd ~/Sites/claude-code-config
+./setup-sync.sh
+
+# 3. MCPs are already configured in settings.json
+# Just verify they're working:
+claude-code
+```
+
+### Verify MCP Integration
+```bash
+# Test each MCP
+"Ask Gemini to explain async/await"        # Gemini MCP
+"Navigate to https://example.com"          # Playwright MCP
+"Get React 19 documentation"               # Context7 MCP
+"List all projects in memory bank"         # Memory Bank MCP
+"Read the entire knowledge graph"          # Knowledge Graph MCP
+```
 
 ## 🤖 Agent Registry (19 Specialized Agents)
+
+**Location**: `~/.claude/agents/` (auto-loaded at session start)
+**Selection**: Automatic based on task domain and complexity
 
 ### Core Development (5)
 - **PHPMaster** - PHP 8.3+, PSR standards, modern patterns
@@ -112,6 +143,17 @@ This configuration builds upon excellent open-source work:
 - **debugger**, **git-workflow**, **browser-automation-tools**, **context-fetcher**
 
 ## 💡 Key Features
+
+### 🔧 7 Active MCP Servers
+| MCP | Role | Status |
+|-----|------|--------|
+| **gemini-mcp** | Semantic validation & consultation | ✅ Active |
+| **playwright-mcp** | Browser automation & E2E testing | ✅ Active |
+| **context7-mcp** | Real-time docs (SSE transport) | ✅ Active |
+| **memory-bank-mcp** | Project memory persistence | ✅ Active |
+| **knowledge-graph-mcp** | Structured knowledge base | ✅ Active |
+| **notion-mcp** | Document collaboration | ✅ Active |
+| **asana-mcp** | Task & project management | ✅ Active |
 
 ### 🤖 Multi-Model Intelligence
 - **Cross-Model Planning**: OPUS 4.1 creates plans, GEMINI-2.5-PRO validates
