@@ -11,17 +11,44 @@ This configuration builds upon excellent open-source work:
 - **[Anthropic Claude Code](https://docs.anthropic.com/claude-code)** - Platform and best practices
 
 ### MCP Integrations
-- **[Context7](https://context7.com)** - MCP integration for real-time documentation
+
+#### Core Intelligence & Documentation
 - **[Gemini-CLI MCP](https://github.com/gemini-cli/mcp-tools)** - Cross-model intelligence with Gemini-2.5-Pro
   - Alternative AI perspective for validation and creativity
   - Multi-model brainstorming and ideation
   - Cross-validated planning and code review
   - Performance analysis and optimization insights
-- **[Playwright MCP](https://github.com/microsoft/playwright-mcp)** - Browser automation and E2E testing via MCP
-  - Enables natural language browser control
+- **[Context7](https://context7.com)** - Real-time documentation via SSE transport
+  - Live API documentation updates
+  - Version-specific library docs
+  - Persistent connection for efficiency
+
+#### Testing & Automation
+- **[Playwright MCP](https://github.com/microsoft/playwright-mcp)** - Browser automation and E2E testing
+  - Natural language browser control
   - Accessibility tree-based testing (no screenshots needed)
   - Multi-browser support (Chromium, Firefox, WebKit)
-  - Seamless integration with Claude Code for testing automation
+  - Visual regression and performance testing
+
+#### Memory & Knowledge Management
+- **[Memory Bank MCP](https://github.com/allpepper/memory-bank-mcp)** - Project-specific memory persistence
+  - File-based context storage
+  - Project notes and decisions tracking
+  - Tech stack documentation
+- **[Knowledge Graph MCP](https://github.com/knowledge-graph/mcp)** - Structured knowledge base
+  - Entity relationships mapping
+  - Global preferences storage
+  - Workflow patterns preservation
+
+#### Project Management
+- **[Asana MCP](https://github.com/asana/mcp)** - Task and project management integration
+  - Create and update tasks directly from Claude
+  - Project tracking and organization
+  - Team collaboration features
+- **[Notion MCP](https://github.com/notionhq/notion-mcp)** - Document and wiki integration
+  - Documentation synchronization
+  - Knowledge base management
+  - Collaborative workspace integration
 
 ### Testing & Automation
 - **[Playwright](https://playwright.dev)** by Microsoft - Modern web testing framework
@@ -49,10 +76,14 @@ This configuration builds upon excellent open-source work:
 ## 🚀 Quick Start
 
 1. **Install Claude Code**: Follow official documentation
-2. **Setup MCP Servers**: Configure Context7 and Playwright MCP
+2. **Setup MCP Servers**: Configure all MCP integrations
+   - Core: Gemini-CLI, Context7 (SSE transport)
+   - Testing: Playwright MCP
+   - Memory: Memory Bank, Knowledge Graph
+   - Project Management: Asana, Notion
 3. **Run Setup Script**: `~/.claude/setup-sync.sh`
-4. **Verify Playwright**: `~/.claude/test-playwright-integration.sh`
-5. **Start Testing**: Use natural language commands for browser automation
+4. **Install MCPs**: `~/.claude/install_mcps.sh`
+5. **Verify Integration**: Test with natural language commands
 
 ## 🤖 Agent Registry (19 Specialized Agents)
 
