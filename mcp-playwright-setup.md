@@ -12,51 +12,47 @@ npm install @playwright/mcp
 
 ## 📋 Configuration for Claude Code
 
-### 1. Update MCP Configuration
+### Current Active Configuration
 
-Create or update `~/.config/claude_desktop/config.json`:
+Playwright MCP is already configured in your `settings.json`:
 
 ```json
 {
-  "mcpServers": {
-    "playwright": {
-      "command": "npx",
-      "args": ["@playwright/mcp@latest"],
-      "env": {},
-      "config": {
-        "browser": "chromium",
-        "launchOptions": {
-          "headless": true
-        },
-        "networkRestrictions": [],
-        "capabilities": {
-          "tabs": true,
-          "pdf": true,
-          "bringToFront": true
-        }
+  "mcp": {
+    "servers": {
+      "playwright-mcp": {
+        "command": "npx",
+        "args": ["@playwright/mcp@latest"],
+        "role": "test_automation_browser",
+        "capabilities": [
+          "browser_navigate",
+          "browser_click",
+          "browser_snapshot",
+          "browser_evaluate"
+        ]
       }
     }
   }
 }
 ```
 
-### 2. Alternative Configuration with Local Installation
+### Advanced Configuration Options
 
-If you prefer a local installation:
+For customizing browser behavior, add to your settings:
 
 ```json
 {
-  "mcpServers": {
-    "playwright": {
-      "command": "node",
-      "args": ["/path/to/playwright-mcp/dist/index.js"],
-      "env": {},
-      "config": {
-        "browser": "chromium",
-        "launchOptions": {
-          "headless": false,
-          "args": ["--disable-blink-features=AutomationControlled"]
-        }
+  "playwright-mcp": {
+    "config": {
+      "browser": "chromium",  // or "firefox", "webkit"
+      "launchOptions": {
+        "headless": true,
+        "args": ["--disable-blink-features=AutomationControlled"]
+      },
+      "capabilities": {
+        "tabs": true,
+        "pdf": true,
+        "bringToFront": true
       }
     }
   }
@@ -65,30 +61,36 @@ If you prefer a local installation:
 
 ## 🛠️ Available Tools
 
-Once configured, Playwright MCP provides these tools:
+Playwright MCP provides these tools (already available in your setup):
 
 ### Navigation & Interaction
-- `playwright_navigate` - Navigate to URL
-- `playwright_click` - Click on elements
-- `playwright_type` - Type text into inputs
-- `playwright_hover` - Hover over elements
-- `playwright_select` - Select dropdown options
-- `playwright_press` - Press keyboard keys
+- `browser_navigate` - Navigate to URL
+- `browser_click` - Click on elements
+- `browser_type` - Type text into inputs
+- `browser_hover` - Hover over elements
+- `browser_select_option` - Select dropdown options
+- `browser_press_key` - Press keyboard keys
+- `browser_drag` - Drag and drop elements
 
 ### Content Extraction
-- `playwright_screenshot` - Capture screenshots
-- `playwright_snapshot` - Get accessibility tree snapshot
-- `playwright_evaluate` - Execute JavaScript
+- `browser_take_screenshot` - Capture screenshots
+- `browser_snapshot` - Get accessibility tree snapshot
+- `browser_evaluate` - Execute JavaScript
+- `browser_console_messages` - Get console logs
+- `browser_network_requests` - Monitor network activity
 
 ### Tab Management
-- `playwright_list_tabs` - List all open tabs
-- `playwright_switch_tab` - Switch between tabs
-- `playwright_close_tab` - Close specific tabs
+- `browser_tab_list` - List all open tabs
+- `browser_tab_select` - Switch between tabs
+- `browser_tab_new` - Open new tab
+- `browser_tab_close` - Close specific tabs
 
 ### Advanced Features
-- `playwright_pdf` - Generate PDF from page
-- `playwright_bring_to_front` - Bring browser to foreground
-- `playwright_network` - Monitor network requests
+- `browser_file_upload` - Upload files
+- `browser_wait_for` - Wait for conditions
+- `browser_handle_dialog` - Handle alerts/prompts
+- `browser_resize` - Resize browser window
+- `browser_navigate_back/forward` - Browser history navigation
 
 ## 💡 Workflow Integration Use Cases
 
@@ -217,11 +219,12 @@ Once integrated, you can use commands like:
 
 ## 🚦 Setup Verification
 
-To verify the integration works:
+Your Playwright MCP is already configured and ready! To verify:
 
-1. Restart Claude Code after configuration
-2. Test with: "Navigate to https://example.com and take a screenshot"
-3. Check if Playwright tools are available in the MCP tools list
+1. Check tool availability: The browser_* tools should be available
+2. Test navigation: "Navigate to https://example.com"
+3. Test screenshot: "Take a screenshot of the current page"
+4. Test interaction: "Click on a specific element"
 
 ## 🔍 Troubleshooting
 

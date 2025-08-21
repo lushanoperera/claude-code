@@ -1,27 +1,15 @@
 # 🚀 Playwright MCP - Daily Commands Cheatsheet
 
-## Setup Rapido (Una Volta)
+## Setup Status ✅
 
-```bash
-# 1. Installa Playwright MCP
-npx @playwright/mcp@latest
+**Playwright MCP è già configurato e attivo nel tuo sistema!**
 
-# 2. Configura in ~/.config/claude_desktop/config.json
-{
-  "mcpServers": {
-    "playwright": {
-      "command": "npx",
-      "args": ["@playwright/mcp@latest"],
-      "config": {
-        "browser": "chromium",
-        "launchOptions": {"headless": true}
-      }
-    }
-  }
-}
+La configurazione è già presente in `~/.claude/settings.json`:
+- Command: `npx @playwright/mcp@latest`
+- Browser: Chromium (default)
+- Mode: Headless (per performance ottimali)
 
-# 3. Riavvia Claude Code
-```
+Tutti i comandi browser_* sono disponibili immediatamente.
 
 ## 📋 Comandi Quotidiani per Laravel
 
@@ -143,6 +131,9 @@ npx @playwright/mcp@latest
 # Verifica rapida che il sito sia online
 "Naviga su [tuo-sito] e verifica che carichi correttamente"
 
+# O usando il comando diretto:
+"Usa browser_navigate per andare su [tuo-sito]"
+
 # Test login veloce
 "Vai al login e accedi con le credenziali di test"
 
@@ -221,13 +212,16 @@ npx @playwright/mcp@latest
 
 ```bash
 # Se il browser non si apre
-"Verifica che Playwright sia installato: npx playwright install"
+"Installa i browser necessari con: browser_install"
 
 # Se non trova elementi
-"Usa snapshot per vedere la struttura della pagina"
+"Usa browser_snapshot per vedere la struttura della pagina"
 
 # Se i test sono lenti
-"Usa headless mode per velocizzare"
+"Headless mode è già attivo per default"
+
+# Per debug visuale
+"Configura headless: false in settings.json per vedere il browser"
 
 # Se servono permessi
 "Controlla i permessi del browser per webcam/microfono"
