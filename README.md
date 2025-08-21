@@ -54,6 +54,32 @@ This configuration builds upon excellent open-source work:
 4. **Verify Playwright**: `~/.claude/test-playwright-integration.sh`
 5. **Start Testing**: Use natural language commands for browser automation
 
+## 🤖 Agent Registry (19 Specialized Agents)
+
+### Core Development (5)
+- **PHPMaster** - PHP 8.3+, PSR standards, modern patterns
+- **FrontendDeveloper** - React, Vue, Angular, Next.js, TypeScript
+- **BackendDeveloper** - PHP/Laravel, Node.js, Python APIs
+- **laravel-specialist** - Laravel 11 deep expertise
+- **wordpress-expert** - WordPress core, plugins, themes
+
+### Infrastructure & DevOps (3)
+- **ContainerSpecialist** - Docker, Kubernetes, Laravel Sail
+- **ServerManager** - Linux, Nginx/Apache, PHP-FPM, SSL
+- **CICDPipeline** - GitHub Actions, Laravel Envoy, deployments
+
+### Quality & Security (3)
+- **PHPCodeQuality** - PHPStan, Psalm, Laravel Pint
+- **TestingSpecialist** - Pest, PHPUnit, Playwright, Cypress
+- **SecurityGuard** - OWASP, Laravel security, WordPress hardening
+
+### Architecture & Support (8)
+- **APIArchitect** - REST, GraphQL, OpenAPI
+- **DatabaseOptimizer** - MySQL, PostgreSQL, Redis
+- **DocumentationWriter** - Technical docs, README files
+- **WorkflowCoordinator** - Multi-agent orchestration
+- **debugger**, **git-workflow**, **browser-automation-tools**, **context-fetcher**
+
 ## 💡 Key Features
 
 ### 🤖 Multi-Model Intelligence
@@ -62,10 +88,12 @@ This configuration builds upon excellent open-source work:
 - **Multi-Model Validation**: Code review and optimization through model diversity
 - **Intelligent Brainstorming**: Combined AI creativity for complex challenges
 
-### 🎯 Enhanced Agent Orchestration
-- **100+ Specialized Agents**: Domain experts for every development task
+### 🎯 Streamlined Agent System (19 Specialized Agents)
+- **Optimized from 112 to 19 agents** (-83%): Focused, efficient, no redundancy
+- **Full MCP Integration**: All agents have access to Gemini, Playwright, Context7, Memory Bank, Knowledge Graph, Asana
+- **Clear Separation**: Dedicated FrontendDeveloper and BackendDeveloper agents
+- **PHP/Laravel/WordPress Focus**: Specialized agents for your tech stack
 - **Dynamic Selection**: Automatic agent assignment based on task analysis
-- **Multi-Agent Coordination**: Parallel execution with real-time collaboration
 - **Three-Phase Strategy**: Planning → Agent Implementation → Cross-Validation
 
 ### 🔧 Advanced Integrations
@@ -76,6 +104,12 @@ This configuration builds upon excellent open-source work:
 
 ## 🔄 Version History
 
+- **v5.0** (2025-08-21): **Agent System Refactoring** - Streamlined from 112 to 19 specialized agents
+  - 🎯 83% reduction in agents while maintaining full functionality
+  - 🔧 Full MCP integration for all agents (Gemini, Playwright, Context7, Memory Bank, Knowledge Graph, Asana)
+  - 📦 Split fullstack into dedicated FrontendDeveloper and BackendDeveloper agents
+  - 🚀 New ServerManager agent for self-hosting capabilities
+  - 💻 Optimized for PHP/Laravel/WordPress + Modern JS frameworks (React, Vue, Angular, Next.js)
 - **v4.0** (2025-08-18): **Multi-Model Intelligence** - Gemini-2.5-Pro integration and enhanced orchestration
   - ✨ Cross-model planning validation (OPUS + GEMINI)
   - 🎯 Enhanced agent orchestration with dynamic selection
@@ -100,4 +134,4 @@ Contributions are welcome! Please submit issues and pull requests to help improv
 
 **Maintained by**: Claude Code Community
 **Repository**: [claude-code-config](https://github.com/lushanoperera/claude-code.git)
-**Last Updated**: 2025-08-18
+**Last Updated**: 2025-08-21
