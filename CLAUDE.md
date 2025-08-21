@@ -3,6 +3,12 @@
 ## 🤖 Default Model Configuration
 **Model**: `claude-opus-4-1-20250805` (Opus Plan) - Set as default for all planning and architecture tasks
 
+### Cross-Model Communication Language
+**Important**: When communicating with Gemini or other AI models for improved collaboration and accuracy, English can be used directly without asking for permission. This optimizes model-to-model communication and reduces potential translation errors.
+
+### Language Optimization for Token Efficiency
+**User Preference**: Responses to the user can be provided directly in English without translation to Italian. This optimizes token usage and improves response speed. The user understands both languages fluently.
+
 ## 📋 Session Management & TODO System
 
 ### Automatic Session Initialization
@@ -176,17 +182,19 @@ interface AgentEvaluator {
 }
 
 const agentSelectionMatrix = {
-  // Domain-based automatic selection
-  backend: ['laravel-specialist', 'php-pro', 'backend-typescript-architect', 'python-backend-engineer'],
-  frontend: ['ui-engineer', 'react-specialist', 'nextjs-developer', 'vue-expert'], 
-  database: ['database-specialist', 'postgres-pro', 'sql-pro', 'database-optimizer'],
-  security: ['security-engineer', 'penetration-tester', 'security-auditor', 'compliance-auditor'],
-  devops: ['docker-specialist', 'kubernetes-specialist', 'terraform-engineer', 'devops-engineer'],
-  ai_ml: ['ai-engineer', 'ml-engineer', 'llm-architect', 'prompt-engineer'],
-  testing: ['qa-expert', 'test-automator', 'test-runner'],
-  performance: ['performance-engineer', 'performance-monitor', 'database-optimizer'],
-  architecture: ['architect-reviewer', 'senior-code-reviewer', 'microservices-architect'],
-  orchestration: ['multi-agent-coordinator', 'workflow-orchestrator', 'agent-organizer']
+  // Domain-based automatic selection (Refactored 2025-08-21)
+  backend: ['BackendDeveloper', 'PHPMaster', 'laravel-specialist'],
+  frontend: ['FrontendDeveloper'], // Covers React, Vue, Angular, Next.js
+  database: ['DatabaseOptimizer'],
+  security: ['SecurityGuard'],
+  devops: ['ContainerSpecialist', 'ServerManager', 'CICDPipeline'],
+  api: ['APIArchitect'],
+  testing: ['TestingSpecialist'],
+  quality: ['PHPCodeQuality'],
+  wordpress: ['wordpress-expert'],
+  documentation: ['DocumentationWriter'],
+  orchestration: ['WorkflowCoordinator'],
+  utilities: ['debugger', 'git-workflow', 'browser-automation-tools', 'context-fetcher']
 };
 ```
 
@@ -194,11 +202,14 @@ const agentSelectionMatrix = {
 ```typescript
 interface AgentRegistry {
   loadOnInit: boolean;                    // Load all agents at session start
+  agentCount: 19;                        // Streamlined from 112 to 19 agents
+  lastRefactor: '2025-08-21';           // Major refactoring completed
   capabilities: Map<string, string[]>;   // Agent -> capabilities mapping
   compatibility: Map<string, string[]>;  // Agent -> compatible agents
   complexity: Map<string, number>;       // Agent -> complexity handling score
   domains: Map<string, string[]>;        // Domain -> relevant agents
   tools: Map<string, string[]>;          // Agent -> preferred tools
+  mcpAccess: 'all';                     // All agents have full MCP tool access
 }
 
 const autoAgentSelection = {
@@ -266,93 +277,35 @@ interface McpToolsConfig {
 };
 ```
 
-### Enhanced Agent Families (Domain/Task Convention)
+### Streamlined Agent Registry (19 Specialized Agents)
 
-#### Security Agents
-- `security/vuln-audit` - Dependencies & plugin scanning
-- `security/code-review` - Static analysis (PHP, JS, Python)
-- `security/pentest` - Red-team simulations
-- `security/compliance` - Regulatory framework validation
+#### Core Development (5)
+- `PHPMaster` - PHP 8.3+, PSR standards, modern patterns
+- `FrontendDeveloper` - React, Vue, Angular, Next.js, TypeScript
+- `BackendDeveloper` - PHP/Laravel, Node.js, Python APIs
+- `laravel-specialist` - Laravel 11 deep expertise
+- `wordpress-expert` - WordPress core, plugins, themes
 
-#### Data & Database Agents
-- `db/migration` - Schema evolution & rollback planning
-- `db/query-opt` - SQL optimization & index suggestions
-- `db/performance` - Query analysis & tuning
-- `etl/transform` - CSV, JSON, API data pipelines
+#### Infrastructure & DevOps (3)
+- `ContainerSpecialist` - Docker, Kubernetes, Laravel Sail
+- `ServerManager` - Linux, Nginx/Apache, PHP-FPM, SSL
+- `CICDPipeline` - GitHub Actions, Laravel Envoy, deployments
 
-#### Infrastructure & DevOps Agents
-- `infra/ansible` - Playbook generation & validation
-- `infra/docker` - Container hardening & review
-- `infra/terraform` - Infrastructure as Code
-- `ci/test` - Automated regression testing
-- `ci/deploy` - Deployment pipeline orchestration
+#### Quality & Security (3)
+- `PHPCodeQuality` - PHPStan, Psalm, Laravel Pint, standards
+- `TestingSpecialist` - Pest, PHPUnit, Playwright, Cypress
+- `SecurityGuard` - OWASP, Laravel security, WordPress hardening
 
-#### Content & UX Agents
-- `i18n/translate` - EN ⇆ IT optimized translation
-- `ux/a11y` - Accessibility audits (WCAG)
-- `content/editor` - Text refactoring & SEO validation
-- `content/seo` - Search optimization
+#### Architecture & Support (8)
+- `APIArchitect` - REST, GraphQL, OpenAPI, authentication
+- `DatabaseOptimizer` - MySQL, PostgreSQL, Redis optimization
+- `DocumentationWriter` - Technical docs, README, API docs
+- `WorkflowCoordinator` - Multi-agent orchestration
+- `debugger` - Debugging and troubleshooting
+- `git-workflow` - Git operations
+- `browser-automation-tools` - E2E testing
+- `context-fetcher` - Documentation retrieval
 
-### Legacy Agent Matrix (Auto-Loaded)
-
-#### Backend Specialists
-- `laravel-specialist` - Laravel 11 expertise
-- `php-pro` - Modern PHP 8.3
-- `backend-typescript-architect` - Bun/TypeScript
-- `python-backend-engineer` - Python/uv
-- `django-developer` - Django frameworks
-- `rails-expert` - Ruby on Rails
-
-#### Frontend Specialists  
-- `ui-engineer` - UI/UX implementation
-- `react-specialist` - React 18+
-- `nextjs-developer` - Next.js 15+
-- `vue-expert` - Vue 3 Composition
-- `angular-architect` - Angular enterprise
-
-#### Database & Performance
-- `database-specialist` - Multi-DB expertise
-- `postgres-pro` - PostgreSQL optimization
-- `sql-pro` - Advanced SQL queries
-- `database-optimizer` - Performance tuning
-- `performance-engineer` - System optimization
-
-#### Infrastructure & DevOps
-- `docker-specialist` - Containerization
-- `kubernetes-specialist` - K8s orchestration
-- `terraform-engineer` - Infrastructure as Code
-- `devops-engineer` - CI/CD pipelines
-- `platform-engineer` - Internal platforms
-- `sre-engineer` - Site reliability
-
-#### Security & Quality
-- `security-engineer` - DevSecOps
-- `penetration-tester` - Security testing
-- `security-auditor` - Compliance audits
-- `qa-expert` - Quality assurance
-- `test-automator` - Test automation
-- `compliance-auditor` - Regulatory compliance
-
-#### Architecture & Review
-- `architect-reviewer` - System design (OPUS 4.1)
-- `senior-code-reviewer` - Code review (OPUS 4.1)
-- `workflow-orchestrator` - Task coordination
-- `multi-agent-coordinator` - Cross-agent orchestration
-- `microservices-architect` - Distributed systems
-
-#### AI & Intelligence
-- `ai-engineer` - AI system design
-- `ml-engineer` - Machine learning
-- `llm-architect` - LLM integration
-- `prompt-engineer` - Optimization specialist
-- `nlp-engineer` - Natural language processing
-
-#### Specialized Domains
-- `fintech-engineer` - Financial systems
-- `iot-engineer` - IoT and embedded systems
-- `mobile-developer` - Mobile applications
-- `wordpress-expert` - WordPress ecosystem
-- `payment-integration` - Payment systems
 
 ## 🗑️ Enhanced Cleanup & File Management
 
