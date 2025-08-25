@@ -1,12 +1,11 @@
 # Playwright Testing Workflows
 
-## 🎯 Quick Testing Commands (Playwright MCP Ready)
+## 🎯 Quick Testing Commands
 
 ### Laravel Application Testing
 ```bash
 # Test authentication flow
 "Navigate to [app-url] and test the complete login flow with test credentials"
-# Or use directly: browser_navigate to [app-url]
 
 # Test API endpoints via UI
 "Open [app-url]/api-test, trigger all CRUD operations and verify responses"
@@ -54,7 +53,7 @@
 ```typescript
 const dailyHealthCheck = async () => {
   // 1. Check homepage loads
-  await browser_navigate('https://myapp.test');
+  await playwright_navigate('https://myapp.test');
   
   // 2. Test critical user paths
   await testLoginFlow();
@@ -63,8 +62,8 @@ const dailyHealthCheck = async () => {
   // 3. Verify API endpoints
   await testAPIEndpoints();
   
-  // 4. Generate screenshot report
-  await browser_take_screenshot({ fullPage: true });
+  // 4. Generate report
+  await playwright_pdf('health-check-report.pdf');
 };
 ```
 
@@ -75,13 +74,13 @@ const preDeploymentTests = async () => {
   await runSmokeTests();
   
   // 2. Performance testing
-  await browser_network_requests(); // Monitor load times
+  await measurePageLoadTimes();
   
-  // 3. Cross-browser testing (configure in settings)
+  // 3. Cross-browser testing
   await testInAllBrowsers(['chromium', 'firefox', 'webkit']);
   
   // 4. Accessibility audit
-  await browser_snapshot(); // Get accessibility tree
+  await verifyAccessibility();
 };
 ```
 
@@ -232,14 +231,14 @@ const testSearch = {
 
 ## 💡 Pro Tips
 
-1. **Headless mode è già attivo** per performance ottimali
-2. **Use browser_take_screenshot** per catturare errori
-3. **Use browser_snapshot** per struttura accessibilità invece di screenshot
-4. **browser_evaluate** per eseguire JavaScript custom
-5. **browser_network_requests** per monitorare API
-6. **browser_wait_for** per gestire caricamenti asincroni
-7. **browser_tab_new/select** per test multi-tab
-8. **browser_console_messages** per debug JavaScript
+1. **Use headless mode** for CI/CD pipelines
+2. **Capture screenshots** on test failures
+3. **Use data-testid** attributes for reliable selectors
+4. **Run tests in parallel** for speed
+5. **Mock external APIs** for consistent tests
+6. **Use fixtures** for test data
+7. **Implement retry logic** for flaky tests
+8. **Generate HTML reports** for stakeholders
 
 ## 🔗 Integration with Existing Tools
 

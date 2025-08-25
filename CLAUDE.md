@@ -74,44 +74,68 @@ const tempFileProtocol = {
 ```
 
 ## 🔄 Configuration Sync & Git Worktrees
-**Repository**: `~/Sites/claude-code-config`  
+
+### ⚠️ MANDATORY GIT WORKTREES USAGE
+**IMPORTANT**: ALWAYS use Git worktrees for ANY Git repository. NEVER work directly on the main branch.
+
+**Repository**: `/Users/disconnesso/Documents/Projects/claude-code-config`  
 **Active**: `~/.claude/`  
 **Quick Commands**: `claude-sync-to`, `claude-sync-from`, `claude-commit`, `claude-push`
 
-### Git Worktrees for Parallel Sessions
+### Git Worktrees Protocol (REQUIRED FOR ALL PROJECTS)
 ```typescript
-// Multi-session development with isolated working directories
-const worktreeStrategy = {
-  mainRepo: '~/Sites/claude-code-config',
-  worktrees: {
-    'feature': '~/Sites/claude-code-config-feature',    // Feature development
-    'hotfix': '~/Sites/claude-code-config-hotfix',      // Emergency fixes
-    'experiment': '~/Sites/claude-code-config-exp',     // Testing new ideas
-    'review': '~/Sites/claude-code-config-review'       // Code review workspace
+// ALWAYS use worktrees for parallel development
+const worktreeProtocol = {
+  mandatory: true,  // MUST use worktrees for any Git repo
+  
+  // Standard worktree setup for ANY project
+  setupCommands: {
+    feature: 'git worktree add ../[project]-feature feature-branch',
+    bugfix: 'git worktree add ../[project]-bugfix bugfix-branch',
+    experiment: 'git worktree add ../[project]-exp experimental',
+    review: 'git worktree add ../[project]-review main'
   },
+  
+  // Example for claude-code-config
+  mainRepo: '/Users/disconnesso/Documents/Projects/claude-code-config',
+  worktrees: {
+    'feature': '/Users/disconnesso/Documents/Projects/claude-code-config-feature',    // Feature development
+    'hotfix': '/Users/disconnesso/Documents/Projects/claude-code-config-hotfix',      // Emergency fixes
+    'experiment': '/Users/disconnesso/Documents/Projects/claude-code-config-exp',     // Testing new ideas
+    'review': '/Users/disconnesso/Documents/Projects/claude-code-config-review'       // Code review workspace
+  },
+  
   claudeSessions: {
     architecture: { path: 'main', models: ['opus-4.1', 'gemini-2.5-pro'] },
     implementation: { path: 'feature', models: ['sonnet-4'], agents: ['specialized'] },
     validation: { path: 'review', models: ['gemini-2.5-pro'], focus: 'quality' },
     hotfix: { path: 'hotfix', models: ['haiku-3.5'], focus: 'speed' }
-  }
+  },
+  
+  benefits: [
+    'Parallel development without branch switching',
+    'Isolated testing environments',
+    'Multiple Claude sessions on same project',
+    'No merge conflicts from context switching',
+    'Faster iteration and validation'
+  ]
 };
 ```
 
 ### Worktree Commands
 ```bash
 # Setup worktrees
-git worktree add ~/Sites/claude-code-config-feature feature-branch
-git worktree add ~/Sites/claude-code-config-review main
-git worktree add ~/Sites/claude-code-config-exp experimental
+git worktree add /Users/disconnesso/Documents/Projects/claude-code-config-feature feature-branch
+git worktree add /Users/disconnesso/Documents/Projects/claude-code-config-review main
+git worktree add /Users/disconnesso/Documents/Projects/claude-code-config-exp experimental
 
 # Launch parallel Claude sessions
-cd ~/Sites/claude-code-config-feature && claude-code    # Implementation
-cd ~/Sites/claude-code-config-review && claude-code     # Review
-cd ~/Sites/claude-code-config && claude-code            # Architecture
+cd /Users/disconnesso/Documents/Projects/claude-code-config-feature && claude-code    # Implementation
+cd /Users/disconnesso/Documents/Projects/claude-code-config-review && claude-code     # Review
+cd /Users/disconnesso/Documents/Projects/claude-code-config && claude-code            # Architecture
 
 # Cleanup when done
-git worktree remove ~/Sites/claude-code-config-feature
+git worktree remove /Users/disconnesso/Documents/Projects/claude-code-config-feature
 ```
 
 ## Core Stack
