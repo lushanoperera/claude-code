@@ -1146,3 +1146,19 @@ All MCPs use the suffix `-mcp` for clarity:
 **Version**: 4.1 Enhanced MCP | **Updated**: 2025-08-18  
 **Features**: Cross-Model Intelligence, MCP Orchestration, Agent Families, SSE Transport  
 **Capabilities**: OPUS + GEMINI Planning, Domain-Specific Agent Implementation, Multi-MCP Validation
+## MCP Configuration
+### Default MCPs (All Agents)
+- `memory-bank` - Project memory persistence
+- `knowledge-graph` - Structured knowledge base
+- `context7-mcp` - External documentation
+- `gemini-cli` - AI consultation
+
+### Excluded MCPs (Default)
+- `playwright-mcp` - Browser automation (only for FrontendDeveloper)
+- `figma-dev-mode-mcp-server` - Figma integration (only for FrontendDeveloper)
+- `browser-mcp` - Browser control (only for FrontendDeveloper)
+
+## Agent Configuration
+All agents in this project follow the standard MCP access rules:
+- Default agents: Access to memory-bank, knowledge-graph, context7-mcp, gemini-cli
+- FrontendDeveloper & browser-automation-tools: Additional access to browser-related MCPs
